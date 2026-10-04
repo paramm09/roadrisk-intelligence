@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* ROADRISK Intelligence design system:
+   dark navy / charcoal base, restrained signal-amber accent, data first. */
+:root {
+  --background: #0b1220;
+  --panel: #111a2b;
+  --panel-2: #0e1626;
+  --border: #1e2a42;
+  --foreground: #e6edf7;
+  --muted: #93a4c0;
+  --accent: #f59e0b;
+  --accent-soft: rgba(245, 158, 11, 0.14);
+  --slight: #38bdf8;
+  --serious: #f59e0b;
+  --fatal: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-slight: var(--slight);
+  --color-serious: var(--serious);
+  --color-fatal: var(--fatal);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* subtle map-grid background for hero / section headers */
+.map-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+/* road-line motif: dashed centre line */
+.road-line {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0 28px,
+    transparent 28px 56px
+  );
+  height: 2px;
+  opacity: 0.55;
+}
+
+.road-line-animated {
+  animation: road-scroll 2.4s linear infinite;
+  background-size: 56px 2px;
+}
+
+@keyframes road-scroll {
+  from { background-position-x: 0; }
+  to { background-position-x: -56px; }
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.card-hover {
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card-hover:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.55);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #1a1205;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.65rem 1.3rem;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 1.3rem;
+  color: var(--foreground);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+.field-label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.field-input {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--foreground);
+  padding: 0.55rem 0.7rem;
+  font-size: 0.92rem;
+}
+.field-input:hover { border-color: #2d3d5c; }
+
+.kicker {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* leaflet tweaks for the dark theme */
+.leaflet-container {
+  background: #0a1120;
+  font: inherit;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--panel);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .road-line-animated { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
