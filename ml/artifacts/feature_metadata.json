@@ -1,0 +1,1081 @@
+{
+  "numeric_features": [
+    "speed_limit",
+    "number_of_vehicles",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "month",
+    "weekday",
+    "is_weekend",
+    "is_rush_hour",
+    "is_night",
+    "multi_vehicle"
+  ],
+  "categorical_features": [
+    "road_type",
+    "junction_detail",
+    "junction_control",
+    "light_conditions",
+    "weather_conditions",
+    "road_surface_conditions",
+    "urban_or_rural_area",
+    "first_road_class",
+    "trunk_road_flag",
+    "special_conditions_at_site",
+    "carriageway_hazards",
+    "season",
+    "speed_band",
+    "weather_group",
+    "surface_group",
+    "lighting_group",
+    "junction_group",
+    "road_type_group"
+  ],
+  "features": [
+    "speed_limit",
+    "number_of_vehicles",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "month",
+    "weekday",
+    "is_weekend",
+    "is_rush_hour",
+    "is_night",
+    "multi_vehicle",
+    "road_type",
+    "junction_detail",
+    "junction_control",
+    "light_conditions",
+    "weather_conditions",
+    "road_surface_conditions",
+    "urban_or_rural_area",
+    "first_road_class",
+    "trunk_road_flag",
+    "special_conditions_at_site",
+    "carriageway_hazards",
+    "season",
+    "speed_band",
+    "weather_group",
+    "surface_group",
+    "lighting_group",
+    "junction_group",
+    "road_type_group"
+  ],
+  "target": "accident_severity",
+  "class_names": [
+    "Slight",
+    "Serious",
+    "Fatal"
+  ],
+  "reference_values": {
+    "road_type": "6",
+    "junction_detail": "0",
+    "junction_control": "unknown",
+    "light_conditions": "1",
+    "weather_conditions": "1",
+    "road_surface_conditions": "1",
+    "urban_or_rural_area": "1",
+    "first_road_class": "3",
+    "trunk_road_flag": "2",
+    "special_conditions_at_site": "0",
+    "carriageway_hazards": "0",
+    "season": "autumn",
+    "speed_band": "30",
+    "weather_group": "fine",
+    "surface_group": "dry",
+    "lighting_group": "daylight",
+    "junction_group": "unknown",
+    "road_type_group": "single_carriageway",
+    "speed_limit": 30.0,
+    "number_of_vehicles": 2.0,
+    "hour": 14.0,
+    "hour_sin": -0.5000001788139343,
+    "hour_cos": -0.49999991059303284,
+    "month": 7.0,
+    "weekday": 3.0,
+    "is_weekend": 0.0,
+    "is_rush_hour": 0.0,
+    "is_night": 0.0,
+    "multi_vehicle": 1.0
+  },
+  "value_options": {
+    "road_type": [
+      {
+        "value": "6",
+        "label": "Single carriageway",
+        "count": 261245
+      },
+      {
+        "value": "3",
+        "label": "Dual carriageway",
+        "count": 53095
+      },
+      {
+        "value": "1",
+        "label": "Roundabout",
+        "count": 21956
+      },
+      {
+        "value": "2",
+        "label": "One way street",
+        "count": 7978
+      },
+      {
+        "value": "7",
+        "label": "Slip road",
+        "count": 6222
+      }
+    ],
+    "junction_detail": [
+      {
+        "value": "0",
+        "label": "Not at junction (or within 20m)",
+        "count": 176593
+      },
+      {
+        "value": "13",
+        "label": "13",
+        "count": 99548
+      },
+      {
+        "value": "16",
+        "label": "16",
+        "count": 33253
+      },
+      {
+        "value": "19",
+        "label": "19",
+        "count": 21841
+      },
+      {
+        "value": "18",
+        "label": "18",
+        "count": 7758
+      },
+      {
+        "value": "17",
+        "label": "17",
+        "count": 5587
+      }
+    ],
+    "junction_control": [
+      {
+        "value": "4",
+        "label": "Give way or uncontrolled",
+        "count": 155629
+      },
+      {
+        "value": "2",
+        "label": "Automatic traffic signal",
+        "count": 39449
+      },
+      {
+        "value": "3",
+        "label": "Stop sign",
+        "count": 2451
+      },
+      {
+        "value": "1",
+        "label": "Authorised person",
+        "count": 1565
+      }
+    ],
+    "light_conditions": [
+      {
+        "value": "1",
+        "label": "Daylight",
+        "count": 257640
+      },
+      {
+        "value": "4",
+        "label": "Darkness - lights lit",
+        "count": 74187
+      },
+      {
+        "value": "6",
+        "label": "Darkness - no lighting",
+        "count": 19259
+      },
+      {
+        "value": "7",
+        "label": "Darkness - lighting unknown",
+        "count": 6020
+      },
+      {
+        "value": "5",
+        "label": "Darkness - lights unlit",
+        "count": 2528
+      }
+    ],
+    "weather_conditions": [
+      {
+        "value": "1",
+        "label": "Fine, no high winds",
+        "count": 289805
+      },
+      {
+        "value": "2",
+        "label": "Raining, no high winds",
+        "count": 38797
+      },
+      {
+        "value": "8",
+        "label": "Other",
+        "count": 11148
+      },
+      {
+        "value": "5",
+        "label": "Raining + high winds",
+        "count": 3618
+      },
+      {
+        "value": "4",
+        "label": "Fine + high winds",
+        "count": 3126
+      },
+      {
+        "value": "7",
+        "label": "Fog or mist",
+        "count": 1492
+      },
+      {
+        "value": "3",
+        "label": "Snowing, no high winds",
+        "count": 1244
+      },
+      {
+        "value": "6",
+        "label": "Snowing + high winds",
+        "count": 169
+      }
+    ],
+    "road_surface_conditions": [
+      {
+        "value": "1",
+        "label": "Dry",
+        "count": 262256
+      },
+      {
+        "value": "2",
+        "label": "Wet or damp",
+        "count": 84151
+      },
+      {
+        "value": "4",
+        "label": "Frost or ice",
+        "count": 4648
+      },
+      {
+        "value": "3",
+        "label": "Snow",
+        "count": 865
+      },
+      {
+        "value": "5",
+        "label": "Flood over 3cm deep",
+        "count": 534
+      }
+    ],
+    "urban_or_rural_area": [
+      {
+        "value": "1",
+        "label": "Urban",
+        "count": 241592
+      },
+      {
+        "value": "2",
+        "label": "Rural",
+        "count": 118026
+      }
+    ],
+    "first_road_class": [
+      {
+        "value": "3",
+        "label": "A",
+        "count": 157977
+      },
+      {
+        "value": "6",
+        "label": "Unclassified",
+        "count": 129134
+      },
+      {
+        "value": "4",
+        "label": "B",
+        "count": 45142
+      },
+      {
+        "value": "5",
+        "label": "C",
+        "count": 15800
+      },
+      {
+        "value": "1",
+        "label": "Motorway",
+        "count": 10737
+      },
+      {
+        "value": "2",
+        "label": "A(M)",
+        "count": 864
+      }
+    ],
+    "trunk_road_flag": [
+      {
+        "value": "2",
+        "label": "Non-trunk road",
+        "count": 311485
+      },
+      {
+        "value": "1",
+        "label": "Trunk road",
+        "count": 22825
+      }
+    ],
+    "special_conditions_at_site": [
+      {
+        "value": "0",
+        "label": "None",
+        "count": 240510
+      },
+      {
+        "value": "4",
+        "label": "Roadworks",
+        "count": 3167
+      },
+      {
+        "value": "1",
+        "label": "Auto traffic signal - out",
+        "count": 761
+      },
+      {
+        "value": "5",
+        "label": "Road surface defective",
+        "count": 574
+      },
+      {
+        "value": "7",
+        "label": "Mud",
+        "count": 546
+      },
+      {
+        "value": "3",
+        "label": "Road sign or marking defective or obscured",
+        "count": 386
+      },
+      {
+        "value": "6",
+        "label": "Oil or diesel",
+        "count": 284
+      },
+      {
+        "value": "2",
+        "label": "Auto signal part defective",
+        "count": 130
+      }
+    ],
+    "carriageway_hazards": [
+      {
+        "value": "0",
+        "label": "None",
+        "count": 331355
+      },
+      {
+        "value": "99",
+        "label": "99",
+        "count": 6450
+      },
+      {
+        "value": "13",
+        "label": "13",
+        "count": 4288
+      },
+      {
+        "value": "17",
+        "label": "17",
+        "count": 3330
+      },
+      {
+        "value": "11",
+        "label": "11",
+        "count": 1158
+      },
+      {
+        "value": "21",
+        "label": "21",
+        "count": 1059
+      },
+      {
+        "value": "20",
+        "label": "20",
+        "count": 1042
+      },
+      {
+        "value": "15",
+        "label": "15",
+        "count": 904
+      },
+      {
+        "value": "19",
+        "label": "19",
+        "count": 755
+      },
+      {
+        "value": "16",
+        "label": "16",
+        "count": 740
+      },
+      {
+        "value": "18",
+        "label": "18",
+        "count": 636
+      },
+      {
+        "value": "12",
+        "label": "12",
+        "count": 625
+      },
+      {
+        "value": "14",
+        "label": "14",
+        "count": 428
+      }
+    ]
+  },
+  "input_fields": [
+    {
+      "name": "speed_limit",
+      "type": "int",
+      "required": true,
+      "options": [
+        20,
+        30,
+        40,
+        50,
+        60,
+        70
+      ]
+    },
+    {
+      "name": "road_type",
+      "type": "code",
+      "required": true,
+      "options": [
+        {
+          "value": "6",
+          "label": "Single carriageway",
+          "count": 261245
+        },
+        {
+          "value": "3",
+          "label": "Dual carriageway",
+          "count": 53095
+        },
+        {
+          "value": "1",
+          "label": "Roundabout",
+          "count": 21956
+        },
+        {
+          "value": "2",
+          "label": "One way street",
+          "count": 7978
+        },
+        {
+          "value": "7",
+          "label": "Slip road",
+          "count": 6222
+        }
+      ]
+    },
+    {
+      "name": "junction_detail",
+      "type": "code",
+      "required": true,
+      "options": [
+        {
+          "value": "0",
+          "label": "Not at junction (or within 20m)",
+          "count": 176593
+        },
+        {
+          "value": "13",
+          "label": "13",
+          "count": 99548
+        },
+        {
+          "value": "16",
+          "label": "16",
+          "count": 33253
+        },
+        {
+          "value": "19",
+          "label": "19",
+          "count": 21841
+        },
+        {
+          "value": "18",
+          "label": "18",
+          "count": 7758
+        },
+        {
+          "value": "17",
+          "label": "17",
+          "count": 5587
+        }
+      ]
+    },
+    {
+      "name": "light_conditions",
+      "type": "code",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Daylight",
+          "count": 257640
+        },
+        {
+          "value": "4",
+          "label": "Darkness - lights lit",
+          "count": 74187
+        },
+        {
+          "value": "6",
+          "label": "Darkness - no lighting",
+          "count": 19259
+        },
+        {
+          "value": "7",
+          "label": "Darkness - lighting unknown",
+          "count": 6020
+        },
+        {
+          "value": "5",
+          "label": "Darkness - lights unlit",
+          "count": 2528
+        }
+      ]
+    },
+    {
+      "name": "weather_conditions",
+      "type": "code",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Fine, no high winds",
+          "count": 289805
+        },
+        {
+          "value": "2",
+          "label": "Raining, no high winds",
+          "count": 38797
+        },
+        {
+          "value": "8",
+          "label": "Other",
+          "count": 11148
+        },
+        {
+          "value": "5",
+          "label": "Raining + high winds",
+          "count": 3618
+        },
+        {
+          "value": "4",
+          "label": "Fine + high winds",
+          "count": 3126
+        },
+        {
+          "value": "7",
+          "label": "Fog or mist",
+          "count": 1492
+        },
+        {
+          "value": "3",
+          "label": "Snowing, no high winds",
+          "count": 1244
+        },
+        {
+          "value": "6",
+          "label": "Snowing + high winds",
+          "count": 169
+        }
+      ]
+    },
+    {
+      "name": "road_surface_conditions",
+      "type": "code",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Dry",
+          "count": 262256
+        },
+        {
+          "value": "2",
+          "label": "Wet or damp",
+          "count": 84151
+        },
+        {
+          "value": "4",
+          "label": "Frost or ice",
+          "count": 4648
+        },
+        {
+          "value": "3",
+          "label": "Snow",
+          "count": 865
+        },
+        {
+          "value": "5",
+          "label": "Flood over 3cm deep",
+          "count": 534
+        }
+      ]
+    },
+    {
+      "name": "urban_or_rural_area",
+      "type": "code",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Urban",
+          "count": 241592
+        },
+        {
+          "value": "2",
+          "label": "Rural",
+          "count": 118026
+        }
+      ]
+    },
+    {
+      "name": "number_of_vehicles",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 10,
+      "aliases": [
+        "vehicle_count"
+      ]
+    },
+    {
+      "name": "hour",
+      "type": "int",
+      "required": true,
+      "min": 0,
+      "max": 23
+    },
+    {
+      "name": "day_of_week",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 7,
+      "note": "STATS19 coding: 1=Sunday ... 7=Saturday",
+      "labels": {
+        "1": "Sunday",
+        "2": "Monday",
+        "3": "Tuesday",
+        "4": "Wednesday",
+        "5": "Thursday",
+        "6": "Friday",
+        "7": "Saturday"
+      }
+    },
+    {
+      "name": "month",
+      "type": "int",
+      "required": false,
+      "min": 1,
+      "max": 12
+    },
+    {
+      "name": "junction_control",
+      "type": "code",
+      "required": false,
+      "options": [
+        {
+          "value": "4",
+          "label": "Give way or uncontrolled",
+          "count": 155629
+        },
+        {
+          "value": "2",
+          "label": "Automatic traffic signal",
+          "count": 39449
+        },
+        {
+          "value": "3",
+          "label": "Stop sign",
+          "count": 2451
+        },
+        {
+          "value": "1",
+          "label": "Authorised person",
+          "count": 1565
+        }
+      ]
+    },
+    {
+      "name": "first_road_class",
+      "type": "code",
+      "required": false,
+      "options": [
+        {
+          "value": "3",
+          "label": "A",
+          "count": 157977
+        },
+        {
+          "value": "6",
+          "label": "Unclassified",
+          "count": 129134
+        },
+        {
+          "value": "4",
+          "label": "B",
+          "count": 45142
+        },
+        {
+          "value": "5",
+          "label": "C",
+          "count": 15800
+        },
+        {
+          "value": "1",
+          "label": "Motorway",
+          "count": 10737
+        },
+        {
+          "value": "2",
+          "label": "A(M)",
+          "count": 864
+        }
+      ]
+    },
+    {
+      "name": "trunk_road_flag",
+      "type": "code",
+      "required": false,
+      "options": [
+        {
+          "value": "2",
+          "label": "Non-trunk road",
+          "count": 311485
+        },
+        {
+          "value": "1",
+          "label": "Trunk road",
+          "count": 22825
+        }
+      ]
+    },
+    {
+      "name": "special_conditions_at_site",
+      "type": "code",
+      "required": false,
+      "options": [
+        {
+          "value": "0",
+          "label": "None",
+          "count": 240510
+        },
+        {
+          "value": "4",
+          "label": "Roadworks",
+          "count": 3167
+        },
+        {
+          "value": "1",
+          "label": "Auto traffic signal - out",
+          "count": 761
+        },
+        {
+          "value": "5",
+          "label": "Road surface defective",
+          "count": 574
+        },
+        {
+          "value": "7",
+          "label": "Mud",
+          "count": 546
+        },
+        {
+          "value": "3",
+          "label": "Road sign or marking defective or obscured",
+          "count": 386
+        },
+        {
+          "value": "6",
+          "label": "Oil or diesel",
+          "count": 284
+        },
+        {
+          "value": "2",
+          "label": "Auto signal part defective",
+          "count": 130
+        }
+      ]
+    },
+    {
+      "name": "carriageway_hazards",
+      "type": "code",
+      "required": false,
+      "options": [
+        {
+          "value": "0",
+          "label": "None",
+          "count": 331355
+        },
+        {
+          "value": "99",
+          "label": "99",
+          "count": 6450
+        },
+        {
+          "value": "13",
+          "label": "13",
+          "count": 4288
+        },
+        {
+          "value": "17",
+          "label": "17",
+          "count": 3330
+        },
+        {
+          "value": "11",
+          "label": "11",
+          "count": 1158
+        },
+        {
+          "value": "21",
+          "label": "21",
+          "count": 1059
+        },
+        {
+          "value": "20",
+          "label": "20",
+          "count": 1042
+        },
+        {
+          "value": "15",
+          "label": "15",
+          "count": 904
+        },
+        {
+          "value": "19",
+          "label": "19",
+          "count": 755
+        },
+        {
+          "value": "16",
+          "label": "16",
+          "count": 740
+        },
+        {
+          "value": "18",
+          "label": "18",
+          "count": 636
+        },
+        {
+          "value": "12",
+          "label": "12",
+          "count": 625
+        },
+        {
+          "value": "14",
+          "label": "14",
+          "count": 428
+        }
+      ]
+    }
+  ],
+  "feature_families": {
+    "Speed limit": [
+      "speed_limit",
+      "speed_band"
+    ],
+    "Time of day": [
+      "hour",
+      "hour_sin",
+      "hour_cos",
+      "is_rush_hour",
+      "is_night"
+    ],
+    "Day of week": [
+      "weekday",
+      "is_weekend"
+    ],
+    "Month / season": [
+      "month",
+      "season"
+    ],
+    "Road type": [
+      "road_type",
+      "road_type_group"
+    ],
+    "Junction": [
+      "junction_detail",
+      "junction_control",
+      "junction_group"
+    ],
+    "Lighting": [
+      "light_conditions",
+      "lighting_group"
+    ],
+    "Weather": [
+      "weather_conditions",
+      "weather_group"
+    ],
+    "Road surface": [
+      "road_surface_conditions",
+      "surface_group"
+    ],
+    "Urban / rural": [
+      "urban_or_rural_area"
+    ],
+    "Vehicles involved": [
+      "number_of_vehicles",
+      "multi_vehicle"
+    ],
+    "Road class": [
+      "first_road_class",
+      "trunk_road_flag"
+    ],
+    "Pedestrian crossings": [],
+    "Special conditions / hazards": [
+      "special_conditions_at_site",
+      "carriageway_hazards"
+    ]
+  },
+  "engineered_feature_reasons": {
+    "hour": "Hour of day (0-23) from the recorded collision time; risk and traffic mix vary through the day.",
+    "hour_sin": "Cyclical encoding of hour so 23:00 and 00:00 are neighbours (helps linear models).",
+    "hour_cos": "Cosine partner of hour_sin.",
+    "month": "Month of year from collision date; captures seasonal effects.",
+    "weekday": "Day of week (0=Mon..6=Sun) from date (falls back to the STATS19 day_of_week code).",
+    "is_weekend": "Weekend flag; leisure traffic differs from commuter traffic.",
+    "is_rush_hour": "Weekday 07-09 or 16-18; congestion lowers speeds but raises collision counts.",
+    "is_night": "Hour >= 21 or < 6; proxy for reduced visibility and fatigue/impairment (approximate, ignores season).",
+    "season": "Meteorological season from month (Dec-Feb winter, ...).",
+    "speed_band": "Speed limit grouped (<=20, 30, 40-50, 60, 70, unknown); kinetic energy rises non-linearly with speed.",
+    "multi_vehicle": "More than one vehicle involved; single-vehicle crashes have a different severity profile.",
+    "weather_group": "Weather codes collapsed to fine / rain / snow / high_wind / fog / other / unknown.",
+    "surface_group": "Surface codes collapsed to dry / wet / snow_ice / contaminated / unknown.",
+    "lighting_group": "Light codes collapsed to daylight / dark_lit / dark_unlit / unknown.",
+    "junction_group": "Junction detail collapsed to no_junction / roundabout / t_junction / crossroads_multi / slip_road / private_drive / other / unknown.",
+    "road_type_group": "Road type collapsed to roundabout / one_way_or_slip / dual_carriageway / single_carriageway / unknown."
+  },
+  "labels": {
+    "road_type": {
+      "1": "Roundabout",
+      "2": "One way street",
+      "3": "Dual carriageway",
+      "6": "Single carriageway",
+      "7": "Slip road",
+      "9": "Unknown",
+      "12": "One way street / slip road"
+    },
+    "junction_detail": {
+      "0": "Not at junction (or within 20m)",
+      "1": "Roundabout",
+      "2": "Mini-roundabout",
+      "3": "T or staggered junction",
+      "5": "Slip road",
+      "6": "Crossroads",
+      "7": "More than 4 arms",
+      "8": "Private drive or entrance",
+      "9": "Other junction"
+    },
+    "junction_control": {
+      "0": "Not at junction",
+      "1": "Authorised person",
+      "2": "Automatic traffic signal",
+      "3": "Stop sign",
+      "4": "Give way or uncontrolled"
+    },
+    "light_conditions": {
+      "1": "Daylight",
+      "4": "Darkness - lights lit",
+      "5": "Darkness - lights unlit",
+      "6": "Darkness - no lighting",
+      "7": "Darkness - lighting unknown"
+    },
+    "weather_conditions": {
+      "1": "Fine, no high winds",
+      "2": "Raining, no high winds",
+      "3": "Snowing, no high winds",
+      "4": "Fine + high winds",
+      "5": "Raining + high winds",
+      "6": "Snowing + high winds",
+      "7": "Fog or mist",
+      "8": "Other"
+    },
+    "road_surface_conditions": {
+      "1": "Dry",
+      "2": "Wet or damp",
+      "3": "Snow",
+      "4": "Frost or ice",
+      "5": "Flood over 3cm deep",
+      "6": "Oil or diesel",
+      "7": "Mud"
+    },
+    "urban_or_rural_area": {
+      "1": "Urban",
+      "2": "Rural"
+    },
+    "first_road_class": {
+      "1": "Motorway",
+      "2": "A(M)",
+      "3": "A",
+      "4": "B",
+      "5": "C",
+      "6": "Unclassified"
+    },
+    "trunk_road_flag": {
+      "1": "Trunk road",
+      "2": "Non-trunk road"
+    },
+    "special_conditions_at_site": {
+      "0": "None",
+      "1": "Auto traffic signal - out",
+      "2": "Auto signal part defective",
+      "3": "Road sign or marking defective or obscured",
+      "4": "Roadworks",
+      "5": "Road surface defective",
+      "6": "Oil or diesel",
+      "7": "Mud"
+    },
+    "carriageway_hazards": {
+      "0": "None",
+      "1": "Vehicle load on road",
+      "2": "Other object on road",
+      "3": "Previous accident",
+      "4": "Dog on road",
+      "5": "Other animal on road",
+      "6": "Pedestrian in carriageway",
+      "7": "Any animal in carriageway"
+    },
+    "pedestrian_crossing_human_control": {
+      "0": "None within 50m",
+      "1": "School crossing patrol",
+      "2": "Other authorised person"
+    },
+    "pedestrian_crossing_physical_facilities": {
+      "0": "No facility within 50m",
+      "1": "Zebra",
+      "4": "Pelican/puffin/toucan",
+      "5": "Pedestrian phase at junction signals",
+      "7": "Footbridge or subway",
+      "8": "Central refuge"
+    }
+  },
+  "num_vehicles_cap": 10
+}

@@ -1,0 +1,300 @@
+{
+  "model": "Logistic Regression",
+  "evaluated_at": "2026-10-02T17:13:49",
+  "confusion_matrix": [
+    [
+      33011,
+      13012,
+      12393
+    ],
+    [
+      6607,
+      5220,
+      5695
+    ],
+    [
+      161,
+      232,
+      740
+    ]
+  ],
+  "per_class": {
+    "Slight": {
+      "precision": 0.8298599763694412,
+      "recall": 0.5651020268419611,
+      "f1": 0.6723560262742502,
+      "support": 58416
+    },
+    "Serious": {
+      "precision": 0.28271230502599654,
+      "recall": 0.29791119735190047,
+      "f1": 0.290112821652865,
+      "support": 17522
+    },
+    "Fatal": {
+      "precision": 0.03930316549819418,
+      "recall": 0.6531332744924978,
+      "f1": 0.0741445819347728,
+      "support": 1133
+    }
+  },
+  "error_analysis": {
+    "fatal_collisions_in_test": 1133,
+    "fatal_collisions_predicted_as": {
+      "Fatal": 740,
+      "Serious": 232,
+      "Slight": 161
+    },
+    "fatal_recall": 0.6531332744924978,
+    "fatal_precision": 0.03930316549819418,
+    "poor_fatal_performance_flag": true,
+    "fatal_flag_rule": "flag set when Fatal F1 < 0.30",
+    "predicted_fatal_total": 18828,
+    "segment_performance": {
+      "lighting_group": [
+        {
+          "level": "daylight",
+          "n": 55029,
+          "accuracy": 0.5371894819095386,
+          "n_fatal": 659,
+          "fatal_recall": 0.5781487101669196,
+          "mean_predicted_fatal_probability": 0.2330688815009815,
+          "observed_fatal_rate": 0.011975503825255774
+        },
+        {
+          "level": "dark_lit",
+          "n": 16071,
+          "accuracy": 0.49100864911953207,
+          "n_fatal": 235,
+          "fatal_recall": 0.6,
+          "mean_predicted_fatal_probability": 0.2767065602880334,
+          "observed_fatal_rate": 0.01462261215854645
+        },
+        {
+          "level": "dark_unlit",
+          "n": 5966,
+          "accuracy": 0.2541066040898424,
+          "n_fatal": 238,
+          "fatal_recall": 0.9117647058823529,
+          "mean_predicted_fatal_probability": 0.4670185230044346,
+          "observed_fatal_rate": 0.03989272544418371
+        }
+      ],
+      "road_type_group": [
+        {
+          "level": "single_carriageway",
+          "n": 55973,
+          "accuracy": 0.47201329212298787,
+          "n_fatal": 845,
+          "fatal_recall": 0.6130177514792899,
+          "mean_predicted_fatal_probability": 0.26853645024166767,
+          "observed_fatal_rate": 0.015096564414985797
+        },
+        {
+          "level": "dual_carriageway",
+          "n": 11405,
+          "accuracy": 0.44857518632178867,
+          "n_fatal": 253,
+          "fatal_recall": 0.8379446640316206,
+          "mean_predicted_fatal_probability": 0.3355140885632732,
+          "observed_fatal_rate": 0.02218325295922841
+        },
+        {
+          "level": "roundabout",
+          "n": 4609,
+          "accuracy": 0.7539596441744413,
+          "n_fatal": 21,
+          "fatal_recall": 0.14285714285714285,
+          "mean_predicted_fatal_probability": 0.1329011225026872,
+          "observed_fatal_rate": 0.004556302885658494
+        },
+        {
+          "level": "one_way_or_slip",
+          "n": 3113,
+          "accuracy": 0.6993254095727593,
+          "n_fatal": 13,
+          "fatal_recall": 0.5384615384615384,
+          "mean_predicted_fatal_probability": 0.15676542783922356,
+          "observed_fatal_rate": 0.004176035978156119
+        },
+        {
+          "level": "unknown",
+          "n": 1971,
+          "accuracy": 0.9046169457128361,
+          "n_fatal": 1,
+          "fatal_recall": 0.0,
+          "mean_predicted_fatal_probability": 0.05210380737709447,
+          "observed_fatal_rate": 0.0005073566717402334
+        }
+      ],
+      "speed_band": [
+        {
+          "level": "30",
+          "n": 40196,
+          "accuracy": 0.6012787342024082,
+          "n_fatal": 384,
+          "fatal_recall": 0.24479166666666666,
+          "mean_predicted_fatal_probability": 0.1993712837753698,
+          "observed_fatal_rate": 0.009553189372076824
+        },
+        {
+          "level": "20_or_less",
+          "n": 13244,
+          "accuracy": 0.6800060404711568,
+          "n_fatal": 50,
+          "fatal_recall": 0.04,
+          "mean_predicted_fatal_probability": 0.12794338444537606,
+          "observed_fatal_rate": 0.0037752944729688917
+        },
+        {
+          "level": "40_50",
+          "n": 10030,
+          "accuracy": 0.3708873379860419,
+          "n_fatal": 210,
+          "fatal_recall": 0.8238095238095238,
+          "mean_predicted_fatal_probability": 0.35927100102974946,
+          "observed_fatal_rate": 0.020937188434695914
+        },
+        {
+          "level": "60",
+          "n": 9383,
+          "accuracy": 0.119791111584781,
+          "n_fatal": 340,
+          "fatal_recall": 0.9705882352941176,
+          "mean_predicted_fatal_probability": 0.5032837614062853,
+          "observed_fatal_rate": 0.036235745497175745
+        },
+        {
+          "level": "70",
+          "n": 4218,
+          "accuracy": 0.22569938359412042,
+          "n_fatal": 149,
+          "fatal_recall": 0.9463087248322147,
+          "mean_predicted_fatal_probability": 0.4804095743069588,
+          "observed_fatal_rate": 0.035324798482693216
+        }
+      ],
+      "urban_or_rural_area": [
+        {
+          "level": "1",
+          "n": 52109,
+          "accuracy": 0.6244026943522232,
+          "n_fatal": 442,
+          "fatal_recall": 0.2986425339366516,
+          "mean_predicted_fatal_probability": 0.18528097202288804,
+          "observed_fatal_rate": 0.008482219962002725
+        },
+        {
+          "level": "2",
+          "n": 24954,
+          "accuracy": 0.25763404664582834,
+          "n_fatal": 690,
+          "fatal_recall": 0.881159420289855,
+          "mean_predicted_fatal_probability": 0.4169294661586089,
+          "observed_fatal_rate": 0.02765087761481125
+        }
+      ],
+      "weather_group": [
+        {
+          "level": "fine",
+          "n": 61876,
+          "accuracy": 0.4929536492339518,
+          "n_fatal": 966,
+          "fatal_recall": 0.6532091097308489,
+          "mean_predicted_fatal_probability": 0.26692013674976456,
+          "observed_fatal_rate": 0.015611868899088499
+        },
+        {
+          "level": "rain",
+          "n": 9392,
+          "accuracy": 0.4922274275979557,
+          "n_fatal": 125,
+          "fatal_recall": 0.592,
+          "mean_predicted_fatal_probability": 0.26608430685331413,
+          "observed_fatal_rate": 0.013309199318568995
+        },
+        {
+          "level": "other",
+          "n": 2391,
+          "accuracy": 0.6595566708490171,
+          "n_fatal": 18,
+          "fatal_recall": 0.8888888888888888,
+          "mean_predicted_fatal_probability": 0.17162429011629957,
+          "observed_fatal_rate": 0.0075282308657465494
+        },
+        {
+          "level": "unknown",
+          "n": 2137,
+          "accuracy": 0.8385587271876462,
+          "n_fatal": 6,
+          "fatal_recall": 0.5,
+          "mean_predicted_fatal_probability": 0.0853620491047095,
+          "observed_fatal_rate": 0.0028076743097800653
+        },
+        {
+          "level": "high_wind",
+          "n": 668,
+          "accuracy": 0.3278443113772455,
+          "n_fatal": 13,
+          "fatal_recall": 0.9230769230769231,
+          "mean_predicted_fatal_probability": 0.38179064324969647,
+          "observed_fatal_rate": 0.019461077844311378
+        },
+        {
+          "level": "fog",
+          "n": 308,
+          "accuracy": 0.32142857142857145,
+          "n_fatal": 5,
+          "fatal_recall": 0.8,
+          "mean_predicted_fatal_probability": 0.4018147519265958,
+          "observed_fatal_rate": 0.016233766233766232
+        },
+        {
+          "level": "snow",
+          "n": 299,
+          "accuracy": 0.5317725752508361,
+          "n_fatal": 0,
+          "fatal_recall": null,
+          "mean_predicted_fatal_probability": 0.24747793603964616,
+          "observed_fatal_rate": 0.0
+        }
+      ],
+      "junction_group": [
+        {
+          "level": "unknown",
+          "n": 39575,
+          "accuracy": 0.5847631080227417,
+          "n_fatal": 379,
+          "fatal_recall": 0.38258575197889183,
+          "mean_predicted_fatal_probability": 0.19916793166019836,
+          "observed_fatal_rate": 0.009576753000631712
+        },
+        {
+          "level": "no_junction",
+          "n": 37496,
+          "accuracy": 0.42215169618092596,
+          "n_fatal": 754,
+          "fatal_recall": 0.7891246684350133,
+          "mean_predicted_fatal_probability": 0.32479482261594006,
+          "observed_fatal_rate": 0.020108811606571367
+        }
+      ]
+    },
+    "probability_calibration": {
+      "Slight": {
+        "mean_predicted_probability": 0.39453015573822947,
+        "observed_frequency": 0.7579504612629913
+      },
+      "Serious": {
+        "mean_predicted_probability": 0.3451828677821655,
+        "observed_frequency": 0.2273488082417511
+      },
+      "Fatal": {
+        "mean_predicted_probability": 0.2602869764796051,
+        "observed_frequency": 0.01470073049525762
+      }
+    },
+    "calibration_note": "Mean predicted probability vs observed frequency. With class_weight='balanced' predicted probabilities are inflated for minority classes and must not be read as real-world frequencies."
+  },
+  "note": "Where the model is wrong on the untouched test set. Fatal-class performance is reported as measured - poor numbers are flagged, never hidden."
+}

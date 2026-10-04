@@ -1,0 +1,333 @@
+{
+  "model": "Logistic Regression",
+  "computed_on": "20000 random test rows",
+  "scoring": "macro F1 drop (and Fatal recall drop)",
+  "permutation_importance_by_family": [
+    {
+      "family": "Vehicles involved",
+      "columns": [
+        "number_of_vehicles",
+        "multi_vehicle"
+      ],
+      "macro_f1_drop_mean": 0.02117235501163156,
+      "macro_f1_drop_std": 0.002208913657913268,
+      "fatal_recall_drop_mean": 0.041237113402061855
+    },
+    {
+      "family": "Road class",
+      "columns": [
+        "first_road_class",
+        "trunk_road_flag"
+      ],
+      "macro_f1_drop_mean": 0.007552713937548083,
+      "macro_f1_drop_std": 0.0005828515202123485,
+      "fatal_recall_drop_mean": 0.02863688430698741
+    },
+    {
+      "family": "Special conditions / hazards",
+      "columns": [
+        "special_conditions_at_site",
+        "carriageway_hazards"
+      ],
+      "macro_f1_drop_mean": 0.004025258073896069,
+      "macro_f1_drop_std": 0.0018109722003103108,
+      "fatal_recall_drop_mean": 0.02405498281786944
+    },
+    {
+      "family": "Speed limit",
+      "columns": [
+        "speed_limit",
+        "speed_band"
+      ],
+      "macro_f1_drop_mean": 0.0033733379683716,
+      "macro_f1_drop_std": 0.00040169299201919237,
+      "fatal_recall_drop_mean": 0.18556701030927836
+    },
+    {
+      "family": "Road type",
+      "columns": [
+        "road_type",
+        "road_type_group"
+      ],
+      "macro_f1_drop_mean": 0.0016080776422588798,
+      "macro_f1_drop_std": 0.0012375054567382283,
+      "fatal_recall_drop_mean": 0.03321878579610541
+    },
+    {
+      "family": "Day of week",
+      "columns": [
+        "weekday",
+        "is_weekend"
+      ],
+      "macro_f1_drop_mean": 0.0014722009707083445,
+      "macro_f1_drop_std": 0.00021980316235822568,
+      "fatal_recall_drop_mean": -0.002290950744558984
+    },
+    {
+      "family": "Month / season",
+      "columns": [
+        "month",
+        "season"
+      ],
+      "macro_f1_drop_mean": 0.0009494823281556338,
+      "macro_f1_drop_std": 0.0005212615370893028,
+      "fatal_recall_drop_mean": 0.004581901489117968
+    },
+    {
+      "family": "Weather",
+      "columns": [
+        "weather_conditions",
+        "weather_group"
+      ],
+      "macro_f1_drop_mean": 0.0008495858570378342,
+      "macro_f1_drop_std": 0.0003090831285412675,
+      "fatal_recall_drop_mean": 0.008018327605956443
+    },
+    {
+      "family": "Time of day",
+      "columns": [
+        "hour",
+        "hour_sin",
+        "hour_cos",
+        "is_rush_hour",
+        "is_night"
+      ],
+      "macro_f1_drop_mean": 0.00010511102344101797,
+      "macro_f1_drop_std": 0.0012295939972059228,
+      "fatal_recall_drop_mean": 0.04009163802978233
+    },
+    {
+      "family": "Junction",
+      "columns": [
+        "junction_detail",
+        "junction_control",
+        "junction_group"
+      ],
+      "macro_f1_drop_mean": -4.974974812022026e-05,
+      "macro_f1_drop_std": 4.446829736167702e-05,
+      "fatal_recall_drop_mean": 0.02290950744558995
+    },
+    {
+      "family": "Lighting",
+      "columns": [
+        "light_conditions",
+        "lighting_group"
+      ],
+      "macro_f1_drop_mean": -0.00043561760255187804,
+      "macro_f1_drop_std": 0.00025988025437248416,
+      "fatal_recall_drop_mean": 0.014891179839633431
+    },
+    {
+      "family": "Road surface",
+      "columns": [
+        "road_surface_conditions",
+        "surface_group"
+      ],
+      "macro_f1_drop_mean": -0.0009291808395072524,
+      "macro_f1_drop_std": 0.00032626078807690076,
+      "fatal_recall_drop_mean": -0.0034364261168384758
+    },
+    {
+      "family": "Urban / rural",
+      "columns": [
+        "urban_or_rural_area"
+      ],
+      "macro_f1_drop_mean": -0.00111637020772735,
+      "macro_f1_drop_std": 0.0004043973454690907,
+      "fatal_recall_drop_mean": 0.03894616265750287
+    }
+  ],
+  "native_importance": {
+    "model_type": "LogisticRegression",
+    "coefficients_note": "Standardised numeric inputs; coefficients are per transformed feature, log-odds scale.",
+    "coefficients_by_class": {
+      "0": [
+        {
+          "feature": "cat__carriageway_hazards_99",
+          "coef": 0.5274493435231069
+        },
+        {
+          "feature": "cat__carriageway_hazards_20",
+          "coef": 0.3951032961913338
+        },
+        {
+          "feature": "cat__carriageway_hazards_18",
+          "coef": -0.387991694170024
+        },
+        {
+          "feature": "cat__carriageway_hazards_15",
+          "coef": 0.34697960758392354
+        },
+        {
+          "feature": "cat__junction_detail_unknown",
+          "coef": 0.32399416603395353
+        },
+        {
+          "feature": "num__multi_vehicle",
+          "coef": 0.3192918626405542
+        },
+        {
+          "feature": "cat__carriageway_hazards_17",
+          "coef": -0.3118118119491367
+        },
+        {
+          "feature": "cat__junction_control_1",
+          "coef": 0.24228093347591356
+        },
+        {
+          "feature": "cat__trunk_road_flag_unknown",
+          "coef": -0.21902533164681381
+        },
+        {
+          "feature": "cat__carriageway_hazards_0",
+          "coef": -0.21031884861462102
+        },
+        {
+          "feature": "num__speed_limit",
+          "coef": -0.21004171105556418
+        },
+        {
+          "feature": "cat__trunk_road_flag_1",
+          "coef": 0.20408715306140937
+        },
+        {
+          "feature": "cat__junction_control_unknown",
+          "coef": -0.1979816472422124
+        },
+        {
+          "feature": "cat__road_type_group_unknown",
+          "coef": 0.1979415560350466
+        },
+        {
+          "feature": "cat__road_type_unknown",
+          "coef": 0.1979415560350466
+        }
+      ],
+      "1": [
+        {
+          "feature": "cat__carriageway_hazards_unknown",
+          "coef": -0.2631662191148905
+        },
+        {
+          "feature": "cat__carriageway_hazards_20",
+          "coef": 0.26112528485183917
+        },
+        {
+          "feature": "cat__carriageway_hazards_15",
+          "coef": 0.24073110882392434
+        },
+        {
+          "feature": "cat__carriageway_hazards_14",
+          "coef": 0.19660796331052977
+        },
+        {
+          "feature": "cat__junction_control_1",
+          "coef": 0.1870595177500346
+        },
+        {
+          "feature": "cat__junction_detail_17",
+          "coef": 0.16388670867251456
+        },
+        {
+          "feature": "cat__carriageway_hazards_21",
+          "coef": 0.15340357328911863
+        },
+        {
+          "feature": "cat__special_conditions_at_site_5",
+          "coef": 0.12818838610592775
+        },
+        {
+          "feature": "cat__junction_control_unknown",
+          "coef": -0.11586518283716192
+        },
+        {
+          "feature": "cat__carriageway_hazards_0",
+          "coef": -0.11199754346631895
+        },
+        {
+          "feature": "cat__trunk_road_flag_unknown",
+          "coef": 0.11103263677787908
+        },
+        {
+          "feature": "num__speed_limit",
+          "coef": -0.1042275478713607
+        },
+        {
+          "feature": "cat__carriageway_hazards_12",
+          "coef": -0.09986511762351129
+        },
+        {
+          "feature": "cat__junction_detail_unknown",
+          "coef": -0.09374077167613883
+        },
+        {
+          "feature": "cat__carriageway_hazards_19",
+          "coef": -0.0824851932863907
+        }
+      ],
+      "2": [
+        {
+          "feature": "cat__carriageway_hazards_20",
+          "coef": -0.6562285810431802
+        },
+        {
+          "feature": "cat__carriageway_hazards_15",
+          "coef": -0.5877107164078469
+        },
+        {
+          "feature": "cat__carriageway_hazards_99",
+          "coef": -0.4596235695379811
+        },
+        {
+          "feature": "cat__carriageway_hazards_18",
+          "coef": 0.44702419399540405
+        },
+        {
+          "feature": "cat__junction_control_1",
+          "coef": -0.4293404512259479
+        },
+        {
+          "feature": "cat__carriageway_hazards_17",
+          "coef": 0.3385358163832365
+        },
+        {
+          "feature": "cat__carriageway_hazards_0",
+          "coef": 0.32231639208094265
+        },
+        {
+          "feature": "num__multi_vehicle",
+          "coef": -0.3157051921397457
+        },
+        {
+          "feature": "num__speed_limit",
+          "coef": 0.3142692589269195
+        },
+        {
+          "feature": "cat__junction_control_unknown",
+          "coef": 0.313846830079374
+        },
+        {
+          "feature": "cat__carriageway_hazards_unknown",
+          "coef": 0.24290755618053578
+        },
+        {
+          "feature": "cat__carriageway_hazards_14",
+          "coef": -0.24192598261687084
+        },
+        {
+          "feature": "cat__carriageway_hazards_12",
+          "coef": 0.2324851027934482
+        },
+        {
+          "feature": "cat__junction_detail_unknown",
+          "coef": -0.230253394357811
+        },
+        {
+          "feature": "cat__weather_conditions_infrequent_sklearn",
+          "coef": -0.21659972545787004
+        }
+      ]
+    }
+  },
+  "caveat": "Importance reflects associations in historical reported collisions, not causes."
+}

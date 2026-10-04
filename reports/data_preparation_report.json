@@ -1,0 +1,239 @@
+{
+  "raw_rows_per_year": {
+    "2021": 101087,
+    "2022": 106004,
+    "2023": 104258,
+    "2024": 100927,
+    "2025": 101525
+  },
+  "combined_rows": 513801,
+  "removed_rows": {
+    "invalid_or_missing_target": 0,
+    "duplicate_collision_index": 0,
+    "total": 0
+  },
+  "duplicates": {
+    "duplicate_full_rows": 0,
+    "duplicate_collision_index": 0
+  },
+  "missing_values": {
+    "collision_index": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "collision_year": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "longitude": {
+      "n_missing": 53,
+      "pct_missing": 0.01
+    },
+    "latitude": {
+      "n_missing": 53,
+      "pct_missing": 0.01
+    },
+    "accident_severity": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "number_of_vehicles": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "date": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "day_of_week": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "first_road_class": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "road_type": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "speed_limit": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "junction_detail": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "junction_control": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "light_conditions": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "weather_conditions": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "road_surface_conditions": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "special_conditions_at_site": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "carriageway_hazards": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "urban_or_rural_area": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "trunk_road_flag": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "hour": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "target": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "severity": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    }
+  },
+  "invalid_values": {
+    "special_code_policy": "DfT -1/9/99/unallocated codes -> category 'unknown'; speed_limit outside 20-70 -> missing (median-imputed later)",
+    "special_code_counts": {
+      "road_type": {
+        "9": 13060
+      },
+      "junction_detail": {
+        "-1": 19982,
+        "99": 1429
+      },
+      "junction_control": {
+        "-1": 217897,
+        "9": 11210
+      },
+      "light_conditions": {
+        "-1": 34
+      },
+      "weather_conditions": {
+        "9": 14566,
+        "-1": 12
+      },
+      "road_surface_conditions": {
+        "9": 6721,
+        "-1": 3527
+      },
+      "urban_or_rural_area": {
+        "3": 50,
+        "-1": 8
+      },
+      "first_road_class": {
+        "-1": 6
+      },
+      "trunk_road_flag": {
+        "-1": 36318
+      },
+      "special_conditions_at_site": {
+        "-1": 151370,
+        "9": 10558
+      },
+      "carriageway_hazards": {
+        "-1": 9891
+      }
+    },
+    "suspicious_values": {
+      "speed_limit_not_in_{20..70}": 3,
+      "number_of_vehicles_lt_1": 0,
+      "number_of_vehicles_gt_cap": 36,
+      "unparseable_dates": 0,
+      "hour_out_of_range_set_to_missing": 0,
+      "coordinates_missing": 53,
+      "coordinates_outside_uk_box": 0
+    },
+    "unparseable_dates": 0
+  },
+  "final_rows": 513801,
+  "final_columns": [
+    "collision_index",
+    "collision_year",
+    "date",
+    "target",
+    "severity",
+    "speed_limit",
+    "number_of_vehicles",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "month",
+    "weekday",
+    "is_weekend",
+    "is_rush_hour",
+    "is_night",
+    "multi_vehicle",
+    "road_type",
+    "junction_detail",
+    "junction_control",
+    "light_conditions",
+    "weather_conditions",
+    "road_surface_conditions",
+    "urban_or_rural_area",
+    "first_road_class",
+    "trunk_road_flag",
+    "special_conditions_at_site",
+    "carriageway_hazards",
+    "season",
+    "speed_band",
+    "weather_group",
+    "surface_group",
+    "lighting_group",
+    "junction_group",
+    "road_type_group",
+    "lat_r",
+    "lon_r",
+    "split"
+  ],
+  "processed_file": "stats19_model_data.parquet",
+  "years_used": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "settings": {
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "random_seed": 42,
+    "split_strategy": "random",
+    "train_frac": 0.7,
+    "val_frac": 0.15,
+    "test_frac": 0.15,
+    "imbalance_strategy": "CLASS_WEIGHT",
+    "smote_ratio": 0.25,
+    "search_n_iter": 8,
+    "cv_folds": 3,
+    "n_jobs": 1,
+    "tuning_max_rows": 100000,
+    "refit_on_train_val": true,
+    "chunk_size": 100000,
+    "max_rows_per_year": null,
+    "num_vehicles_cap": 10
+  }
+}

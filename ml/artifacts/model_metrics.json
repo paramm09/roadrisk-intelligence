@@ -1,0 +1,314 @@
+{
+  "validation": {
+    "baseline": {
+      "display_name": "Baseline (most frequent class)",
+      "training_seconds": 5.219683000002988,
+      "n": 77070,
+      "accuracy": 0.7579473206176204,
+      "macro_precision": 0.2526491068725401,
+      "macro_recall": 0.3333333333333333,
+      "macro_f1": 0.2874364935847757,
+      "weighted_f1": 0.6535851604809136,
+      "weighted_precision": 0.5744841408314298,
+      "weighted_recall": 0.7579473206176204,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          58415,
+          0,
+          0
+        ],
+        [
+          17522,
+          0,
+          0
+        ],
+        [
+          1133,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Slight",
+        "Serious",
+        "Fatal"
+      ],
+      "class_wise": {
+        "Slight": {
+          "precision": 0.7579473206176204,
+          "recall": 1.0,
+          "f1": 0.862309480754327,
+          "support": 58415
+        },
+        "Serious": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 17522
+        },
+        "Fatal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1133
+        }
+      },
+      "fatal_recall": 0.0,
+      "fatal_precision": 0.0,
+      "fatal_f1": 0.0,
+      "log_loss": 8.724462877565596,
+      "roc_auc_ovr_macro": 0.5,
+      "fatal_average_precision": 0.014700921240430776,
+      "fatal_prevalence": 0.014700921240430776
+    },
+    "logistic_regression": {
+      "display_name": "Logistic Regression",
+      "training_seconds": 16.554705400005332,
+      "n": 77070,
+      "accuracy": 0.5046062021538861,
+      "macro_precision": 0.3837734348621695,
+      "macro_recall": 0.5077460576599587,
+      "macro_f1": 0.3455588972300688,
+      "weighted_f1": 0.5752124097582835,
+      "weighted_precision": 0.6916917006607326,
+      "weighted_recall": 0.5046062021538861,
+      "balanced_accuracy": 0.5077460576599587,
+      "confusion_matrix": [
+        [
+          32904,
+          12881,
+          12630
+        ],
+        [
+          6763,
+          5237,
+          5522
+        ],
+        [
+          160,
+          224,
+          749
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Slight",
+        "Serious",
+        "Fatal"
+      ],
+      "class_wise": {
+        "Slight": {
+          "precision": 0.8261731990860471,
+          "recall": 0.5632799794573312,
+          "f1": 0.6698560697054213,
+          "support": 58415
+        },
+        "Serious": {
+          "precision": 0.2855195725656962,
+          "recall": 0.2988814062321653,
+          "f1": 0.2920477358911443,
+          "support": 17522
+        },
+        "Fatal": {
+          "precision": 0.039627532934765355,
+          "recall": 0.6610767872903796,
+          "f1": 0.07477288609364081,
+          "support": 1133
+        }
+      },
+      "fatal_recall": 0.6610767872903796,
+      "fatal_precision": 0.039627532934765355,
+      "fatal_f1": 0.07477288609364081,
+      "log_loss": 1.0003579298836482,
+      "roc_auc_ovr_macro": 0.647682526686778,
+      "fatal_average_precision": 0.046457263776085,
+      "fatal_prevalence": 0.014700921240430776
+    },
+    "random_forest": {
+      "display_name": "Random Forest",
+      "training_seconds": 243.29458679999516,
+      "n": 77070,
+      "accuracy": 0.6001297521733489,
+      "macro_precision": 0.38948387765901654,
+      "macro_recall": 0.4452171769928072,
+      "macro_f1": 0.38888397194631996,
+      "weighted_f1": 0.6346493974645456,
+      "weighted_precision": 0.6867363875385317,
+      "weighted_recall": 0.6001297521733489,
+      "balanced_accuracy": 0.4452171769928072,
+      "confusion_matrix": [
+        [
+          38776,
+          16170,
+          3469
+        ],
+        [
+          8521,
+          7179,
+          1822
+        ],
+        [
+          286,
+          550,
+          297
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Slight",
+        "Serious",
+        "Fatal"
+      ],
+      "class_wise": {
+        "Slight": {
+          "precision": 0.8149128890570162,
+          "recall": 0.6638021056235556,
+          "f1": 0.7316364459706787,
+          "support": 58415
+        },
+        "Serious": {
+          "precision": 0.300389137620821,
+          "recall": 0.4097135030247689,
+          "f1": 0.3466357644672992,
+          "support": 17522
+        },
+        "Fatal": {
+          "precision": 0.0531496062992126,
+          "recall": 0.2621359223300971,
+          "f1": 0.088379705400982,
+          "support": 1133
+        }
+      },
+      "fatal_recall": 0.2621359223300971,
+      "fatal_precision": 0.0531496062992126,
+      "fatal_f1": 0.088379705400982,
+      "log_loss": 0.8179388355917403,
+      "roc_auc_ovr_macro": 0.6535568898013684,
+      "fatal_average_precision": 0.0444397602556283,
+      "fatal_prevalence": 0.014700921240430776
+    },
+    "gradient_boosting": {
+      "display_name": "Gradient Boosting (HistGradientBoosting)",
+      "training_seconds": 12.868273100000806,
+      "n": 77070,
+      "accuracy": 0.5198391073050473,
+      "macro_precision": 0.3845511841384395,
+      "macro_recall": 0.5018676795808046,
+      "macro_f1": 0.35361978283315915,
+      "weighted_f1": 0.5854334766248386,
+      "weighted_precision": 0.6930123733881027,
+      "weighted_recall": 0.5198391073050473,
+      "balanced_accuracy": 0.5018676795808046,
+      "confusion_matrix": [
+        [
+          33700,
+          14094,
+          10621
+        ],
+        [
+          6807,
+          5679,
+          5036
+        ],
+        [
+          165,
+          283,
+          685
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Slight",
+        "Serious",
+        "Fatal"
+      ],
+      "class_wise": {
+        "Slight": {
+          "precision": 0.828579858379229,
+          "recall": 0.576906616451254,
+          "f1": 0.6802103202236418,
+          "support": 58415
+        },
+        "Serious": {
+          "precision": 0.28315715995213403,
+          "recall": 0.32410683711905036,
+          "f1": 0.302251317260099,
+          "support": 17522
+        },
+        "Fatal": {
+          "precision": 0.04191653408395545,
+          "recall": 0.6045895851721095,
+          "f1": 0.07839771101573677,
+          "support": 1133
+        }
+      },
+      "fatal_recall": 0.6045895851721095,
+      "fatal_precision": 0.04191653408395545,
+      "fatal_f1": 0.07839771101573677,
+      "log_loss": 0.9581371235374885,
+      "roc_auc_ovr_macro": 0.6575887444592337,
+      "fatal_average_precision": 0.053222504424299946,
+      "fatal_prevalence": 0.014700921240430776
+    }
+  },
+  "test": {
+    "model": "Logistic Regression",
+    "n": 77071,
+    "accuracy": 0.5056506338311427,
+    "macro_precision": 0.38395848229787727,
+    "macro_recall": 0.5053821662287864,
+    "macro_f1": 0.3455378099539626,
+    "weighted_f1": 0.5766593440226571,
+    "weighted_precision": 0.6938448427394511,
+    "weighted_recall": 0.5056506338311427,
+    "balanced_accuracy": 0.5053821662287864,
+    "confusion_matrix": [
+      [
+        33011,
+        13012,
+        12393
+      ],
+      [
+        6607,
+        5220,
+        5695
+      ],
+      [
+        161,
+        232,
+        740
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "class_wise": {
+      "Slight": {
+        "precision": 0.8298599763694412,
+        "recall": 0.5651020268419611,
+        "f1": 0.6723560262742502,
+        "support": 58416
+      },
+      "Serious": {
+        "precision": 0.28271230502599654,
+        "recall": 0.29791119735190047,
+        "f1": 0.290112821652865,
+        "support": 17522
+      },
+      "Fatal": {
+        "precision": 0.03930316549819418,
+        "recall": 0.6531332744924978,
+        "f1": 0.0741445819347728,
+        "support": 1133
+      }
+    },
+    "fatal_recall": 0.6531332744924978,
+    "fatal_precision": 0.03930316549819418,
+    "fatal_f1": 0.0741445819347728,
+    "log_loss": 0.9992721647659202,
+    "roc_auc_ovr_macro": 0.6479020206705878,
+    "fatal_average_precision": 0.04912289703271304,
+    "fatal_prevalence": 0.01470073049525762
+  },
+  "note": "'test' is filled by evaluate_models.py for the final model only."
+}

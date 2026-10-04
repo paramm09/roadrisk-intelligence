@@ -1,0 +1,36 @@
+# ROADRISK Intelligence — Python dependencies
+# ---------------------------------------------------------------------------
+# Tested with: Python 3.13.3 64-bit (standard/GIL build) on Windows 10/11.
+#
+# IMPORTANT — interpreter requirement:
+#   Do NOT create the virtualenv from the free-threaded interpreter
+#   (python3.13t.exe / "3.13t" / cp313t tags). Free-threaded builds have no
+#   compatible Windows wheels for pyarrow and matplotlib, so pip silently
+#   falls back to source distributions and tries to compile NumPy/Meson,
+#   which fails without GCC/MinGW. Create the venv with the normal python:
+#       py -3.13 -m venv .venv
+#
+# IMPORTANT — wheels only:
+#   Every package below is installed from a pre-built Windows binary wheel.
+--only-binary=:all:
+
+# --- Core ML pipeline (versions known to work on this machine) -------------
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.17.1
+scikit-learn==1.8.0
+joblib==1.6.0
+
+# --- Storage, visualisation, testing ---------------------------------------
+pyarrow==25.0.1        # parquet storage for processed data (pickle fallback exists)
+matplotlib==3.10.8     # notebooks / EDA figures only
+pytest==8.4.2          # test runner
+httpx2>=0.27           # starlette TestClient (API tests)
+
+# --- FastAPI backend --------------------------------------------------------
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2.7
+
+# --- Optional: only needed if ROADRISK_IMBALANCE=SMOTE is selected ----------
+imbalanced-learn>=0.12

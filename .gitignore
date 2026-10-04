@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+node_modules/
+.next/
+# Large / regenerable data and artifacts
+data/raw/*
+data/processed/*
+ml/artifacts/*.joblib
+!**/.gitkeep
+# Local runtime logs
+*_log.txt
+# Keep small JSON artifacts + reports if you want to commit them; ignore model binaries only.

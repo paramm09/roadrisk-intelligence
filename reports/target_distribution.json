@@ -1,0 +1,36 @@
+{
+  "raw_target_column": "accident_severity",
+  "raw_values_observed": {
+    "3": 389435,
+    "2": 116813,
+    "1": 7553
+  },
+  "mapping_used": {
+    "1": "Fatal",
+    "2": "Serious",
+    "3": "Slight"
+  },
+  "model_class_order": [
+    "Slight",
+    "Serious",
+    "Fatal"
+  ],
+  "n_rows_before": 513801,
+  "n_missing_target": 0,
+  "n_unexpected_codes": 0,
+  "unexpected_codes": {},
+  "n_rows_after": 513801,
+  "class_counts": {
+    "Slight": 389435,
+    "Serious": 116813,
+    "Fatal": 7553
+  },
+  "class_percentages": {
+    "Slight": 75.795,
+    "Serious": 22.735,
+    "Fatal": 1.47
+  },
+  "imbalance_ratio_majority_to_minority": 51.56,
+  "frequency_sanity_check_passed": true,
+  "sanity_check_note": "Expected frequency order Slight > Serious > Fatal."
+}

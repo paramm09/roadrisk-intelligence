@@ -1,0 +1,40 @@
+{
+  "strategy_selected": "CLASS_WEIGHT",
+  "train_class_counts": {
+    "Slight": 272604,
+    "Serious": 81769,
+    "Fatal": 5287
+  },
+  "train_class_percentages": {
+    "Slight": 75.795,
+    "Serious": 22.735,
+    "Fatal": 1.47
+  },
+  "imbalance_ratio_majority_to_minority": 51.56,
+  "balanced_class_weights_would_be": {
+    "Slight": 0.44,
+    "Serious": 1.466,
+    "Fatal": 22.676
+  },
+  "resampling_applied_to": "training data only (inside the sklearn/imblearn Pipeline); validation and test are never resampled",
+  "smote_ratio": null,
+  "smote_caveat": "SMOTE interpolates one-hot/binary columns, producing non-physical fractional values; class weighting is the default for that reason.",
+  "comparison_logistic_regression_validation": {
+    "NONE": {
+      "accuracy": 0.7574153367068899,
+      "macro_f1": 0.2951884092418329,
+      "balanced_accuracy": 0.33596261758722457,
+      "fatal_recall": 0.0,
+      "fatal_precision": 0.0
+    },
+    "CLASS_WEIGHT": {
+      "accuracy": 0.5015440508628519,
+      "macro_f1": 0.34454485697335513,
+      "balanced_accuracy": 0.5026624921259822,
+      "fatal_recall": 0.6443071491615181,
+      "fatal_precision": 0.03897074524877216
+    }
+  },
+  "comparison_rows_used_for_fit": 50000,
+  "comparison_note": "Same model, same data; only class weighting differs. Evaluated on the validation split."
+}

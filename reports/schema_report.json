@@ -1,0 +1,3684 @@
+{
+  "created_at": "2026-10-02T16:58:27",
+  "years_requested": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "years_found": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "years_missing": [],
+  "row_count_per_year": {
+    "2021": 101087,
+    "2022": 106004,
+    "2023": 104258,
+    "2024": 100927,
+    "2025": 101525
+  },
+  "total_row_count": 513801,
+  "duplicate_count": {
+    "full_rows": 0,
+    "index_values": 0
+  },
+  "target_column": "collision_severity (canonical: accident_severity)",
+  "target_values": {
+    "1": 7553,
+    "2": 116813,
+    "3": 389435
+  },
+  "target_distribution": {
+    "mapping_expected": {
+      "1": "Fatal",
+      "2": "Serious",
+      "3": "Slight"
+    },
+    "counts_by_code": {
+      "1": 7553,
+      "2": 116813,
+      "3": 389435
+    },
+    "percentages_by_code": {
+      "1": 1.47,
+      "2": 22.735,
+      "3": 75.795
+    },
+    "note": "Aggregated across all inspected years; see reports/target_distribution.json for the validated, label-mapped version."
+  },
+  "column_differences_between_years": {
+    "in_all_years": [
+      "accident_severity",
+      "carriageway_hazards",
+      "carriageway_hazards_historic",
+      "collision_adjusted_severity_serious",
+      "collision_adjusted_severity_slight",
+      "collision_index",
+      "collision_injury_based",
+      "collision_ref_no",
+      "collision_year",
+      "date",
+      "day_of_week",
+      "did_police_officer_attend_scene_of_accident",
+      "enhanced_severity_collision",
+      "first_road_class",
+      "first_road_number",
+      "junction_control",
+      "junction_detail",
+      "junction_detail_historic",
+      "latitude",
+      "light_conditions",
+      "local_authority_district",
+      "local_authority_highway",
+      "local_authority_highway_current",
+      "local_authority_ons_district",
+      "location_easting_osgr",
+      "location_northing_osgr",
+      "longitude",
+      "lsoa_of_accident_location",
+      "number_of_casualties",
+      "number_of_vehicles",
+      "pedestrian_crossing",
+      "pedestrian_crossing_human_control_historic",
+      "pedestrian_crossing_physical_facilities_historic",
+      "police_force",
+      "road_surface_conditions",
+      "road_type",
+      "second_road_class",
+      "second_road_number",
+      "special_conditions_at_site",
+      "speed_limit",
+      "time",
+      "trunk_road_flag",
+      "urban_or_rural_area",
+      "weather_conditions"
+    ],
+    "not_in_all_years": []
+  },
+  "feature_availability": {
+    "source_columns_found_in_all_years": [
+      "accident_severity",
+      "carriageway_hazards",
+      "collision_index",
+      "collision_year",
+      "date",
+      "day_of_week",
+      "first_road_class",
+      "junction_control",
+      "junction_detail",
+      "latitude",
+      "light_conditions",
+      "longitude",
+      "number_of_vehicles",
+      "road_surface_conditions",
+      "road_type",
+      "special_conditions_at_site",
+      "speed_limit",
+      "time",
+      "trunk_road_flag",
+      "urban_or_rural_area",
+      "weather_conditions"
+    ],
+    "source_columns_missing_in_some_years": [],
+    "source_columns_not_found_at_all": [
+      "pedestrian_crossing_human_control",
+      "pedestrian_crossing_physical_facilities"
+    ],
+    "model_features_that_need_a_missing_source": {
+      "pedestrian_crossing_human_control": "column absent from the downloaded files -> feature skipped",
+      "pedestrian_crossing_physical_facilities": "column absent from the downloaded files -> feature skipped"
+    },
+    "excluded_columns_present_in_files": {
+      "accident_severity": "TARGET. Never a feature.",
+      "collision_index": "IDENTIFIER: no predictive meaning; kept only to de-duplicate and verify the split.",
+      "collision_ref_no": "IDENTIFIER.",
+      "collision_year": "Excluded to avoid memorising year-level drift (reporting changes, COVID-19 2020); kept only for analytics and temporal splitting.",
+      "date": "Raw date replaced by engineered month / weekday / season.",
+      "day_of_week": "Raw STATS19 code (1=Sunday) replaced by engineered weekday / is_weekend.",
+      "did_police_officer_attend_scene_of_accident": "POST-EVENT: attendance is a response to the collision and is more likely for severe collisions, so it encodes the outcome.",
+      "first_road_number": "HIGH-CARDINALITY road identifier.",
+      "latitude": "HIGH-CARDINALITY continuous geography. Not used as a model feature (location memorisation, weak generalisation); rounded copy kept for the historical map and grid aggregation only.",
+      "local_authority_district": "HIGH-CARDINALITY administrative identifier (~380 levels).",
+      "local_authority_highway": "HIGH-CARDINALITY administrative identifier.",
+      "local_authority_ons_district": "HIGH-CARDINALITY administrative identifier.",
+      "location_easting_osgr": "As latitude (OSGR coordinates).",
+      "location_northing_osgr": "As latitude (OSGR coordinates).",
+      "longitude": "As latitude.",
+      "lsoa_of_accident_location": "HIGH-CARDINALITY small-area identifier (~35k levels).",
+      "number_of_casualties": "LEAKAGE: only known after the outcome, and mechanically linked to severity (a fatal collision has at least one casualty; more casualties -> more likely severe).",
+      "police_force": "Administrative area with force-specific reporting practice; would let the model learn reporting differences rather than collision circumstances. (Move to ALLOWED_FEATURES to test it.)",
+      "second_road_class": "Structurally missing away from junctions and largely redundant with junction_detail.",
+      "second_road_number": "HIGH-CARDINALITY road identifier.",
+      "time": "Raw time replaced by engineered hour and derived flags."
+    },
+    "columns_in_files_ignored_by_pipeline": [
+      "carriageway_hazards_historic",
+      "collision_adjusted_severity_serious",
+      "collision_adjusted_severity_slight",
+      "collision_injury_based",
+      "enhanced_severity_collision",
+      "junction_detail_historic",
+      "local_authority_highway_current",
+      "pedestrian_crossing",
+      "pedestrian_crossing_human_control_historic",
+      "pedestrian_crossing_physical_facilities_historic"
+    ]
+  },
+  "files": {
+    "2021": {
+      "file": "dft-road-casualty-statistics-collision-2021.csv",
+      "encoding": "utf-8-sig",
+      "rows": 101087,
+      "n_columns": 44,
+      "duplicate_full_rows": 0,
+      "duplicate_index_values": 0,
+      "target_column_raw_name": "collision_severity",
+      "target_raw_values": {
+        "3": 78329,
+        "2": 21284,
+        "1": 1474
+      },
+      "columns": [
+        {
+          "column": "collision_index",
+          "canonical_name": "collision_index",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "2021170M10151",
+            "2021170S11701",
+            "2021111064046",
+            "2021070535511",
+            "2021070706357"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_year",
+          "canonical_name": "collision_year",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "2021"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_ref_no",
+          "canonical_name": "collision_ref_no",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "170M10151",
+            "170S11701",
+            "111064046",
+            "070535511",
+            "070706357"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_easting_osgr",
+          "canonical_name": "location_easting_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 17,
+          "pct_missing": 0.017,
+          "n_unique": ">=500",
+          "sample_values": [
+            "449258",
+            "444654",
+            "429040",
+            "346174",
+            "352780"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_northing_osgr",
+          "canonical_name": "location_northing_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 17,
+          "pct_missing": 0.017,
+          "n_unique": ">=500",
+          "sample_values": [
+            "520038",
+            "518643",
+            "515035",
+            "384305",
+            "387411"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "longitude",
+          "canonical_name": "longitude",
+          "dtype_inferred": "float64",
+          "n_missing": 17,
+          "pct_missing": 0.017,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1.239576",
+            "-1.310998",
+            "-1.552792",
+            "-2.810107",
+            "-2.711338"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "latitude",
+          "canonical_name": "latitude",
+          "dtype_inferred": "float64",
+          "n_missing": 17,
+          "pct_missing": 0.017,
+          "n_unique": ">=500",
+          "sample_values": [
+            "54.57318",
+            "54.561071",
+            "54.529779",
+            "53.352892",
+            "53.381441"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "police_force",
+          "canonical_name": "police_force",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 44,
+          "sample_values": [
+            "17",
+            "11",
+            "7",
+            "4",
+            "16"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_severity",
+          "canonical_name": "accident_severity",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "3",
+            "2",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_vehicles",
+          "canonical_name": "number_of_vehicles",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 13,
+          "sample_values": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "4"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_casualties",
+          "canonical_name": "number_of_casualties",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 12,
+          "sample_values": [
+            "1",
+            "4",
+            "2",
+            "3",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "date",
+          "canonical_name": "date",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 365,
+          "sample_values": [
+            "10/02/2021",
+            "15/10/2021",
+            "05/07/2021",
+            "01/08/2021",
+            "11/10/2021"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "day_of_week",
+          "canonical_name": "day_of_week",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "4",
+            "6",
+            "2",
+            "1",
+            "7"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "time",
+          "canonical_name": "time",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "14:44",
+            "21:20",
+            "21:45",
+            "17:02",
+            "15:21"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "local_authority_district",
+          "canonical_name": "local_authority_district",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 15,
+          "sample_values": [
+            "243",
+            "-1",
+            "470",
+            "472",
+            "241"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_ons_district",
+          "canonical_name": "local_authority_ons_district",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 363,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000005",
+            "E06000006",
+            "E06000007"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway",
+          "canonical_name": "local_authority_highway",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 206,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000005",
+            "E06000006",
+            "E06000007"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway_current",
+          "canonical_name": "local_authority_highway_current",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 207,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000005",
+            "E06000006",
+            "E06000007"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "first_road_class",
+          "canonical_name": "first_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "4",
+            "3",
+            "5",
+            "6",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "first_road_number",
+          "canonical_name": "first_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "1272",
+            "1305",
+            "167",
+            "0",
+            "5061"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "road_type",
+          "canonical_name": "road_type",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "6",
+            "3",
+            "1",
+            "7",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "speed_limit",
+          "canonical_name": "speed_limit",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "30",
+            "60",
+            "40",
+            "70",
+            "20"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_detail_historic",
+          "canonical_name": "junction_detail_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 11,
+          "sample_values": [
+            "0",
+            "3",
+            "1",
+            "6",
+            "8"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "junction_detail",
+          "canonical_name": "junction_detail",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "0",
+            "13",
+            "16",
+            "18",
+            "19"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_control",
+          "canonical_name": "junction_control",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "2",
+            "4",
+            "3",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "second_road_class",
+          "canonical_name": "second_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "6",
+            "3",
+            "4",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "second_road_number",
+          "canonical_name": "second_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1",
+            "0",
+            "562",
+            "5156",
+            "5061"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_human_control_historic",
+          "canonical_name": "pedestrian_crossing_human_control_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 5,
+          "sample_values": [
+            "0",
+            "2",
+            "1",
+            "9",
+            "-1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_physical_facilities_historic",
+          "canonical_name": "pedestrian_crossing_physical_facilities_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "4",
+            "0",
+            "5",
+            "1",
+            "8"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing",
+          "canonical_name": "pedestrian_crossing",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "14",
+            "0",
+            "15",
+            "13",
+            "12"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "light_conditions",
+          "canonical_name": "light_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "1",
+            "4",
+            "6",
+            "7",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "weather_conditions",
+          "canonical_name": "weather_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "1",
+            "8",
+            "2",
+            "4",
+            "7"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "road_surface_conditions",
+          "canonical_name": "road_surface_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "3",
+            "1",
+            "2",
+            "-1",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "special_conditions_at_site",
+          "canonical_name": "special_conditions_at_site",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "4",
+            "5",
+            "7",
+            "6"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "carriageway_hazards_historic",
+          "canonical_name": "carriageway_hazards_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "3",
+            "2",
+            "9",
+            "7"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "carriageway_hazards",
+          "canonical_name": "carriageway_hazards",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 14,
+          "sample_values": [
+            "0",
+            "13",
+            "18",
+            "21",
+            "15"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "urban_or_rural_area",
+          "canonical_name": "urban_or_rural_area",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "1",
+            "2",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "did_police_officer_attend_scene_of_accident",
+          "canonical_name": "did_police_officer_attend_scene_of_accident",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "1",
+            "3",
+            "2"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "trunk_road_flag",
+          "canonical_name": "trunk_road_flag",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "lsoa_of_accident_location",
+          "canonical_name": "lsoa_of_accident_location",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "E01033468",
+            "E01033477",
+            "E01033483",
+            "E01012391",
+            "E01012411"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "enhanced_severity_collision",
+          "canonical_name": "enhanced_severity_collision",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "3",
+            "7",
+            "6",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_injury_based",
+          "canonical_name": "collision_injury_based",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 2,
+          "sample_values": [
+            "0",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_serious",
+          "canonical_name": "collision_adjusted_severity_serious",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0.11714",
+            "1",
+            "0",
+            "0.01611",
+            "0.04734"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_slight",
+          "canonical_name": "collision_adjusted_severity_slight",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0.88286",
+            "0",
+            "1",
+            "0.98389",
+            "0.95266"
+          ],
+          "used_by_pipeline": false
+        }
+      ]
+    },
+    "2022": {
+      "file": "dft-road-casualty-statistics-collision-2022.csv",
+      "encoding": "utf-8-sig",
+      "rows": 106004,
+      "n_columns": 44,
+      "duplicate_full_rows": 0,
+      "duplicate_index_values": 0,
+      "target_column_raw_name": "collision_severity",
+      "target_raw_values": {
+        "3": 81069,
+        "2": 23333,
+        "1": 1602
+      },
+      "columns": [
+        {
+          "column": "collision_index",
+          "canonical_name": "collision_index",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "2022170M11542",
+            "2022170S41352",
+            "2022070018133",
+            "2022041207140",
+            "2022041230134"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_year",
+          "canonical_name": "collision_year",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "2022"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_ref_no",
+          "canonical_name": "collision_ref_no",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "170M11542",
+            "170S41352",
+            "070018133",
+            "041207140",
+            "041230134"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_easting_osgr",
+          "canonical_name": "location_easting_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 22,
+          "pct_missing": 0.021,
+          "n_unique": ">=500",
+          "sample_values": [
+            "449805",
+            "442918",
+            "359806",
+            "334066",
+            "333517"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_northing_osgr",
+          "canonical_name": "location_northing_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 22,
+          "pct_missing": 0.021,
+          "n_unique": ">=500",
+          "sample_values": [
+            "520540",
+            "516384",
+            "391896",
+            "433587",
+            "437160"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "longitude",
+          "canonical_name": "longitude",
+          "dtype_inferred": "float64",
+          "n_missing": 22,
+          "pct_missing": 0.021,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1.231017",
+            "-1.338157",
+            "-2.606293",
+            "-3.002406",
+            "-3.011512"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "latitude",
+          "canonical_name": "latitude",
+          "dtype_inferred": "float64",
+          "n_missing": 22,
+          "pct_missing": 0.021,
+          "n_unique": ">=500",
+          "sample_values": [
+            "54.577627",
+            "54.54091",
+            "53.422321",
+            "53.794398",
+            "53.826437"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "police_force",
+          "canonical_name": "police_force",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 44,
+          "sample_values": [
+            "17",
+            "7",
+            "4",
+            "16",
+            "12"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_severity",
+          "canonical_name": "accident_severity",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "3",
+            "2",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_vehicles",
+          "canonical_name": "number_of_vehicles",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 14,
+          "sample_values": [
+            "3",
+            "2",
+            "1",
+            "4",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_casualties",
+          "canonical_name": "number_of_casualties",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 16,
+          "sample_values": [
+            "3",
+            "2",
+            "1",
+            "4",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "date",
+          "canonical_name": "date",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 365,
+          "sample_values": [
+            "23/09/2022",
+            "06/09/2022",
+            "08/01/2022",
+            "08/08/2022",
+            "13/10/2022"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "day_of_week",
+          "canonical_name": "day_of_week",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "6",
+            "3",
+            "7",
+            "2",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "time",
+          "canonical_name": "time",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "08:20",
+            "16:05",
+            "17:55",
+            "22:31",
+            "16:42"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "local_authority_district",
+          "canonical_name": "local_authority_district",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "-1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_ons_district",
+          "canonical_name": "local_authority_ons_district",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 364,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000007",
+            "E06000009",
+            "E06000010"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway",
+          "canonical_name": "local_authority_highway",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 207,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000007",
+            "E06000009",
+            "E06000010"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway_current",
+          "canonical_name": "local_authority_highway_current",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 208,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000007",
+            "E06000009",
+            "E06000010"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "first_road_class",
+          "canonical_name": "first_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "3",
+            "1",
+            "4",
+            "6",
+            "2"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "first_road_number",
+          "canonical_name": "first_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "66",
+            "135",
+            "62",
+            "5230",
+            "5266"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "road_type",
+          "canonical_name": "road_type",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "3",
+            "6",
+            "1",
+            "2",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "speed_limit",
+          "canonical_name": "speed_limit",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "50",
+            "40",
+            "70",
+            "30",
+            "20"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_detail_historic",
+          "canonical_name": "junction_detail_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "5",
+            "3",
+            "0",
+            "1",
+            "9"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "junction_detail",
+          "canonical_name": "junction_detail",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "0",
+            "13",
+            "19",
+            "16",
+            "18"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_control",
+          "canonical_name": "junction_control",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "4",
+            "-1",
+            "2",
+            "9",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "second_road_class",
+          "canonical_name": "second_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "3",
+            "6",
+            "0",
+            "4",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "second_road_number",
+          "canonical_name": "second_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "172",
+            "0",
+            "-1",
+            "518",
+            "4058"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_human_control_historic",
+          "canonical_name": "pedestrian_crossing_human_control_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 5,
+          "sample_values": [
+            "0",
+            "-1",
+            "9",
+            "2",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_physical_facilities_historic",
+          "canonical_name": "pedestrian_crossing_physical_facilities_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "5",
+            "1",
+            "4",
+            "8"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing",
+          "canonical_name": "pedestrian_crossing",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "15",
+            "13",
+            "14",
+            "17"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "light_conditions",
+          "canonical_name": "light_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "1",
+            "7",
+            "4",
+            "6",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "weather_conditions",
+          "canonical_name": "weather_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 9,
+          "sample_values": [
+            "1",
+            "5",
+            "2",
+            "8",
+            "4"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "road_surface_conditions",
+          "canonical_name": "road_surface_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "1",
+            "2",
+            "4",
+            "-1",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "special_conditions_at_site",
+          "canonical_name": "special_conditions_at_site",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "5",
+            "4",
+            "-1",
+            "6"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "carriageway_hazards_historic",
+          "canonical_name": "carriageway_hazards_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "-1",
+            "2",
+            "7",
+            "9"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "carriageway_hazards",
+          "canonical_name": "carriageway_hazards",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 14,
+          "sample_values": [
+            "0",
+            "21",
+            "13",
+            "-1",
+            "14"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "urban_or_rural_area",
+          "canonical_name": "urban_or_rural_area",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "did_police_officer_attend_scene_of_accident",
+          "canonical_name": "did_police_officer_attend_scene_of_accident",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "1",
+            "2",
+            "3"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "trunk_road_flag",
+          "canonical_name": "trunk_road_flag",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "lsoa_of_accident_location",
+          "canonical_name": "lsoa_of_accident_location",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "E01033468",
+            "E01012269",
+            "E01012468",
+            "E01012688",
+            "E01012722"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "enhanced_severity_collision",
+          "canonical_name": "enhanced_severity_collision",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "3",
+            "7",
+            "5",
+            "6"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_injury_based",
+          "canonical_name": "collision_injury_based",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 2,
+          "sample_values": [
+            "0",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_serious",
+          "canonical_name": "collision_adjusted_severity_serious",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0.1228",
+            "0.07984",
+            "0.03815",
+            "0",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_slight",
+          "canonical_name": "collision_adjusted_severity_slight",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0.8772",
+            "0.92016",
+            "0.96185",
+            "1",
+            "0"
+          ],
+          "used_by_pipeline": false
+        }
+      ]
+    },
+    "2023": {
+      "file": "dft-road-casualty-statistics-collision-2023.csv",
+      "encoding": "utf-8-sig",
+      "rows": 104258,
+      "n_columns": 44,
+      "duplicate_full_rows": 0,
+      "duplicate_index_values": 0,
+      "target_column_raw_name": "collision_severity",
+      "target_raw_values": {
+        "3": 79298,
+        "2": 23438,
+        "1": 1522
+      },
+      "columns": [
+        {
+          "column": "collision_index",
+          "canonical_name": "collision_index",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "2023170M20483",
+            "2023170M10633",
+            "2023170S11103",
+            "2023111343936",
+            "2023070054936"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_year",
+          "canonical_name": "collision_year",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "2023"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_ref_no",
+          "canonical_name": "collision_ref_no",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "170M20483",
+            "170M10633",
+            "170S11103",
+            "111343936",
+            "070054936"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_easting_osgr",
+          "canonical_name": "location_easting_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 12,
+          "pct_missing": 0.012,
+          "n_unique": ">=500",
+          "sample_values": [
+            "451177",
+            "450248",
+            "443464",
+            "426760",
+            "361439"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_northing_osgr",
+          "canonical_name": "location_northing_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 12,
+          "pct_missing": 0.012,
+          "n_unique": ">=500",
+          "sample_values": [
+            "519211",
+            "518901",
+            "518662",
+            "517238",
+            "393070"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "longitude",
+          "canonical_name": "longitude",
+          "dtype_inferred": "float64",
+          "n_missing": 12,
+          "pct_missing": 0.012,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1.210024",
+            "-1.224443",
+            "-1.329383",
+            "-1.587814",
+            "-2.581866"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "latitude",
+          "canonical_name": "latitude",
+          "dtype_inferred": "float64",
+          "n_missing": 12,
+          "pct_missing": 0.012,
+          "n_unique": ">=500",
+          "sample_values": [
+            "54.565548",
+            "54.562855",
+            "54.561334",
+            "54.549692",
+            "53.432995"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "police_force",
+          "canonical_name": "police_force",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 44,
+          "sample_values": [
+            "17",
+            "11",
+            "7",
+            "4",
+            "16"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_severity",
+          "canonical_name": "accident_severity",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "3",
+            "2",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_vehicles",
+          "canonical_name": "number_of_vehicles",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 16,
+          "sample_values": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "4"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_casualties",
+          "canonical_name": "number_of_casualties",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 18,
+          "sample_values": [
+            "1",
+            "3",
+            "2",
+            "7",
+            "6"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "date",
+          "canonical_name": "date",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 365,
+          "sample_values": [
+            "04/03/2023",
+            "16/04/2023",
+            "27/06/2023",
+            "14/08/2023",
+            "19/01/2023"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "day_of_week",
+          "canonical_name": "day_of_week",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "7",
+            "1",
+            "3",
+            "2",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "time",
+          "canonical_name": "time",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "12:10",
+            "20:54",
+            "09:30",
+            "09:03",
+            "08:45"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "local_authority_district",
+          "canonical_name": "local_authority_district",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "-1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_ons_district",
+          "canonical_name": "local_authority_ons_district",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 351,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000005",
+            "E06000007",
+            "E06000008"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway",
+          "canonical_name": "local_authority_highway",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 208,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000005",
+            "E06000007",
+            "E06000008"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway_current",
+          "canonical_name": "local_authority_highway_current",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 208,
+          "sample_values": [
+            "E06000002",
+            "E06000004",
+            "E06000005",
+            "E06000007",
+            "E06000008"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "first_road_class",
+          "canonical_name": "first_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "6",
+            "3",
+            "5",
+            "4",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "first_road_number",
+          "canonical_name": "first_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0",
+            "172",
+            "68",
+            "5390",
+            "165"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "road_type",
+          "canonical_name": "road_type",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "6",
+            "1",
+            "3",
+            "2",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "speed_limit",
+          "canonical_name": "speed_limit",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "30",
+            "60",
+            "20",
+            "40",
+            "70"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_detail_historic",
+          "canonical_name": "junction_detail_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 11,
+          "sample_values": [
+            "6",
+            "3",
+            "1",
+            "2",
+            "0"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "junction_detail",
+          "canonical_name": "junction_detail",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "16",
+            "13",
+            "0",
+            "18",
+            "19"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_control",
+          "canonical_name": "junction_control",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "4",
+            "-1",
+            "2",
+            "9",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "second_road_class",
+          "canonical_name": "second_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "6",
+            "3",
+            "5",
+            "0",
+            "4"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "second_road_number",
+          "canonical_name": "second_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0",
+            "68",
+            "666",
+            "-1",
+            "1165"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_human_control_historic",
+          "canonical_name": "pedestrian_crossing_human_control_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 5,
+          "sample_values": [
+            "0",
+            "-1",
+            "2",
+            "9",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_physical_facilities_historic",
+          "canonical_name": "pedestrian_crossing_physical_facilities_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "1",
+            "5",
+            "4",
+            "8"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing",
+          "canonical_name": "pedestrian_crossing",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "13",
+            "15",
+            "14",
+            "17"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "light_conditions",
+          "canonical_name": "light_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 5,
+          "sample_values": [
+            "1",
+            "4",
+            "6",
+            "7",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "weather_conditions",
+          "canonical_name": "weather_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 9,
+          "sample_values": [
+            "1",
+            "2",
+            "8",
+            "3",
+            "4"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "road_surface_conditions",
+          "canonical_name": "road_surface_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "1",
+            "5",
+            "4",
+            "2",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "special_conditions_at_site",
+          "canonical_name": "special_conditions_at_site",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "-1",
+            "6",
+            "7",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "carriageway_hazards_historic",
+          "canonical_name": "carriageway_hazards_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "-1",
+            "7",
+            "9",
+            "2"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "carriageway_hazards",
+          "canonical_name": "carriageway_hazards",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 14,
+          "sample_values": [
+            "0",
+            "-1",
+            "20",
+            "14",
+            "15"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "urban_or_rural_area",
+          "canonical_name": "urban_or_rural_area",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 4,
+          "sample_values": [
+            "1",
+            "2",
+            "-1",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "did_police_officer_attend_scene_of_accident",
+          "canonical_name": "did_police_officer_attend_scene_of_accident",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "3"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "trunk_road_flag",
+          "canonical_name": "trunk_road_flag",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "lsoa_of_accident_location",
+          "canonical_name": "lsoa_of_accident_location",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "E01012077",
+            "E01012026",
+            "E01012217",
+            "E01033481",
+            "E01012468"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "enhanced_severity_collision",
+          "canonical_name": "enhanced_severity_collision",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "6",
+            "3",
+            "7",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_injury_based",
+          "canonical_name": "collision_injury_based",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 2,
+          "sample_values": [
+            "0",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_serious",
+          "canonical_name": "collision_adjusted_severity_serious",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0.03426",
+            "1",
+            "0.05072",
+            "0.00366",
+            "0.02432"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_slight",
+          "canonical_name": "collision_adjusted_severity_slight",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0.96574",
+            "0",
+            "0.94928",
+            "0.99634",
+            "0.97568"
+          ],
+          "used_by_pipeline": false
+        }
+      ]
+    },
+    "2024": {
+      "file": "dft-road-casualty-statistics-collision-2024.csv",
+      "encoding": "utf-8-sig",
+      "rows": 100927,
+      "n_columns": 44,
+      "duplicate_full_rows": 0,
+      "duplicate_index_values": 0,
+      "target_column_raw_name": "collision_severity",
+      "target_raw_values": {
+        "2": 23567,
+        "3": 75858,
+        "1": 1502
+      },
+      "columns": [
+        {
+          "column": "collision_index",
+          "canonical_name": "collision_index",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "202417H100324",
+            "202417M110024",
+            "2024480537342",
+            "202417M105824",
+            "202417M114324"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_year",
+          "canonical_name": "collision_year",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "2024"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_ref_no",
+          "canonical_name": "collision_ref_no",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "17H100324",
+            "17M110024",
+            "480537342",
+            "17M105824",
+            "17M114324"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_easting_osgr",
+          "canonical_name": "location_easting_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "449865",
+            "450069",
+            "531643",
+            "450326",
+            "450741"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_northing_osgr",
+          "canonical_name": "location_northing_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "528767",
+            "519269",
+            "180546",
+            "519173",
+            "520051"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "longitude",
+          "canonical_name": "longitude",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1.22869",
+            "-1.22715",
+            "-0.10449",
+            "-1.22319",
+            "-1.21662"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "latitude",
+          "canonical_name": "latitude",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "54.65155",
+            "54.56618",
+            "51.50852",
+            "54.56529",
+            "54.57314"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "police_force",
+          "canonical_name": "police_force",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 44,
+          "sample_values": [
+            "17",
+            "48",
+            "1",
+            "3",
+            "4"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_severity",
+          "canonical_name": "accident_severity",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "3",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_vehicles",
+          "canonical_name": "number_of_vehicles",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 15,
+          "sample_values": [
+            "1",
+            "2",
+            "4",
+            "3",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_casualties",
+          "canonical_name": "number_of_casualties",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 17,
+          "sample_values": [
+            "5",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "date",
+          "canonical_name": "date",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 366,
+          "sample_values": [
+            "12/01/2024",
+            "01/07/2024",
+            "18/09/2024",
+            "04/05/2024",
+            "30/08/2024"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "day_of_week",
+          "canonical_name": "day_of_week",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "6",
+            "2",
+            "4",
+            "7",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "time",
+          "canonical_name": "time",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "19:30",
+            "22:15",
+            "17:00",
+            "16:10",
+            "20:16"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "local_authority_district",
+          "canonical_name": "local_authority_district",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "-1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_ons_district",
+          "canonical_name": "local_authority_ons_district",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 351,
+          "sample_values": [
+            "E06000001",
+            "E06000002",
+            "E09000001",
+            "E06000003",
+            "E06000004"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway",
+          "canonical_name": "local_authority_highway",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 208,
+          "sample_values": [
+            "E06000001",
+            "E06000002",
+            "E09000001",
+            "E06000003",
+            "E06000004"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway_current",
+          "canonical_name": "local_authority_highway_current",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 207,
+          "sample_values": [
+            "E06000001",
+            "E06000002",
+            "E09000001",
+            "E06000003",
+            "E06000004"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "first_road_class",
+          "canonical_name": "first_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "3",
+            "6",
+            "4",
+            "5",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "first_road_number",
+          "canonical_name": "first_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "689",
+            "0",
+            "201",
+            "66",
+            "19"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "road_type",
+          "canonical_name": "road_type",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "3",
+            "6",
+            "2",
+            "1",
+            "7"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "speed_limit",
+          "canonical_name": "speed_limit",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "50",
+            "30",
+            "20",
+            "70",
+            "60"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_detail_historic",
+          "canonical_name": "junction_detail_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 11,
+          "sample_values": [
+            "0",
+            "-1",
+            "9",
+            "3",
+            "6"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "junction_detail",
+          "canonical_name": "junction_detail",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "19",
+            "13",
+            "16",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_control",
+          "canonical_name": "junction_control",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "4",
+            "2",
+            "9",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "second_road_class",
+          "canonical_name": "second_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "-1",
+            "3",
+            "6",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "second_road_number",
+          "canonical_name": "second_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1",
+            "201",
+            "0",
+            "171",
+            "66"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_human_control_historic",
+          "canonical_name": "pedestrian_crossing_human_control_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 5,
+          "sample_values": [
+            "0",
+            "-1",
+            "9",
+            "2",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_physical_facilities_historic",
+          "canonical_name": "pedestrian_crossing_physical_facilities_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "-1",
+            "8",
+            "9",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing",
+          "canonical_name": "pedestrian_crossing",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "17",
+            "15",
+            "14",
+            "13"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "light_conditions",
+          "canonical_name": "light_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "4",
+            "1",
+            "6",
+            "7",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "weather_conditions",
+          "canonical_name": "weather_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 9,
+          "sample_values": [
+            "1",
+            "2",
+            "4",
+            "5",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "road_surface_conditions",
+          "canonical_name": "road_surface_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "2",
+            "1",
+            "4",
+            "5",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "special_conditions_at_site",
+          "canonical_name": "special_conditions_at_site",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "0",
+            "-1",
+            "9",
+            "4",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "carriageway_hazards_historic",
+          "canonical_name": "carriageway_hazards_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "-1",
+            "9",
+            "6",
+            "2"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "carriageway_hazards",
+          "canonical_name": "carriageway_hazards",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 14,
+          "sample_values": [
+            "0",
+            "13",
+            "99",
+            "17",
+            "19"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "urban_or_rural_area",
+          "canonical_name": "urban_or_rural_area",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "did_police_officer_attend_scene_of_accident",
+          "canonical_name": "did_police_officer_attend_scene_of_accident",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "1",
+            "3",
+            "2"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "trunk_road_flag",
+          "canonical_name": "trunk_road_flag",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "lsoa_of_accident_location",
+          "canonical_name": "lsoa_of_accident_location",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "E01011963",
+            "E01012026",
+            "E01003934",
+            "E01035190",
+            "E01012011"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "enhanced_severity_collision",
+          "canonical_name": "enhanced_severity_collision",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "3",
+            "7",
+            "5",
+            "6"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_injury_based",
+          "canonical_name": "collision_injury_based",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 2,
+          "sample_values": [
+            "0",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_serious",
+          "canonical_name": "collision_adjusted_severity_serious",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "1",
+            "0",
+            "0.11617",
+            "0.03247",
+            "0.12283"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_slight",
+          "canonical_name": "collision_adjusted_severity_slight",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0",
+            "1",
+            "0.88383",
+            "0.96753",
+            "0.87717"
+          ],
+          "used_by_pipeline": false
+        }
+      ]
+    },
+    "2025": {
+      "file": "dft-road-casualty-statistics-collision-2025.csv",
+      "encoding": "utf-8-sig",
+      "rows": 101525,
+      "n_columns": 44,
+      "duplicate_full_rows": 0,
+      "duplicate_index_values": 0,
+      "target_column_raw_name": "collision_severity",
+      "target_raw_values": {
+        "3": 74881,
+        "2": 25191,
+        "1": 1453
+      },
+      "columns": [
+        {
+          "column": "collision_index",
+          "canonical_name": "collision_index",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "202517M101925",
+            "202517L205225",
+            "2025070971700",
+            "2025070403274",
+            "2025071000604"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_year",
+          "canonical_name": "collision_year",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "2025"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "collision_ref_no",
+          "canonical_name": "collision_ref_no",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "17M101925",
+            "17L205225",
+            "070971700",
+            "070403274",
+            "071000604"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_easting_osgr",
+          "canonical_name": "location_easting_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 2,
+          "pct_missing": 0.002,
+          "n_unique": ">=500",
+          "sample_values": [
+            "447673",
+            "454611",
+            "354476",
+            "361793",
+            "366083"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "location_northing_osgr",
+          "canonical_name": "location_northing_osgr",
+          "dtype_inferred": "int64",
+          "n_missing": 2,
+          "pct_missing": 0.002,
+          "n_unique": ">=500",
+          "sample_values": [
+            "519279",
+            "518597",
+            "382656",
+            "393163",
+            "389327"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "longitude",
+          "canonical_name": "longitude",
+          "dtype_inferred": "float64",
+          "n_missing": 2,
+          "pct_missing": 0.002,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1.2642",
+            "-1.15704",
+            "-2.68516",
+            "-2.57655",
+            "-2.51157"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "latitude",
+          "canonical_name": "latitude",
+          "dtype_inferred": "float64",
+          "n_missing": 2,
+          "pct_missing": 0.002,
+          "n_unique": ">=500",
+          "sample_values": [
+            "54.5665",
+            "54.55967",
+            "53.33884",
+            "53.43386",
+            "53.39967"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "police_force",
+          "canonical_name": "police_force",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 44,
+          "sample_values": [
+            "17",
+            "7",
+            "4",
+            "16",
+            "30"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_severity",
+          "canonical_name": "accident_severity",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "3",
+            "2",
+            "1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_vehicles",
+          "canonical_name": "number_of_vehicles",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 13,
+          "sample_values": [
+            "1",
+            "2",
+            "7",
+            "3",
+            "4"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "number_of_casualties",
+          "canonical_name": "number_of_casualties",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 21,
+          "sample_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "date",
+          "canonical_name": "date",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 365,
+          "sample_values": [
+            "04/02/2025",
+            "07/05/2025",
+            "27/11/2025",
+            "15/05/2025",
+            "08/12/2025"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "day_of_week",
+          "canonical_name": "day_of_week",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "3",
+            "4",
+            "5",
+            "2",
+            "6"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "time",
+          "canonical_name": "time",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "15:00",
+            "09:35",
+            "18:18",
+            "16:30",
+            "07:45"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "local_authority_district",
+          "canonical_name": "local_authority_district",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 1,
+          "sample_values": [
+            "-1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_ons_district",
+          "canonical_name": "local_authority_ons_district",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 351,
+          "sample_values": [
+            "E06000002",
+            "E06000003",
+            "E06000006",
+            "E06000007",
+            "E06000008"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway",
+          "canonical_name": "local_authority_highway",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 208,
+          "sample_values": [
+            "E06000002",
+            "E06000003",
+            "E06000006",
+            "E06000007",
+            "E06000008"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "local_authority_highway_current",
+          "canonical_name": "local_authority_highway_current",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 208,
+          "sample_values": [
+            "E06000002",
+            "E06000003",
+            "E06000006",
+            "E06000007",
+            "E06000008"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "first_road_class",
+          "canonical_name": "first_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "4",
+            "5",
+            "6",
+            "1",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "first_road_number",
+          "canonical_name": "first_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "6541",
+            "0",
+            "6",
+            "674",
+            "46"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "road_type",
+          "canonical_name": "road_type",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "6",
+            "3",
+            "7",
+            "1",
+            "2"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "speed_limit",
+          "canonical_name": "speed_limit",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "30",
+            "40",
+            "70",
+            "20",
+            "60"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_detail_historic",
+          "canonical_name": "junction_detail_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 11,
+          "sample_values": [
+            "-1",
+            "0",
+            "1",
+            "3",
+            "8"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "junction_detail",
+          "canonical_name": "junction_detail",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "0",
+            "13",
+            "-1",
+            "16",
+            "19"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "junction_control",
+          "canonical_name": "junction_control",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "-1",
+            "2",
+            "4",
+            "9",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "second_road_class",
+          "canonical_name": "second_road_class",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 9,
+          "sample_values": [
+            "0",
+            "6",
+            "3",
+            "1",
+            "4"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "second_road_number",
+          "canonical_name": "second_road_number",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "-1",
+            "0",
+            "1105",
+            "6008",
+            "5"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_human_control_historic",
+          "canonical_name": "pedestrian_crossing_human_control_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 5,
+          "sample_values": [
+            "-1",
+            "0",
+            "9",
+            "1",
+            "2"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing_physical_facilities_historic",
+          "canonical_name": "pedestrian_crossing_physical_facilities_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "-1",
+            "0",
+            "4",
+            "5",
+            "8"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "pedestrian_crossing",
+          "canonical_name": "pedestrian_crossing",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "13",
+            "0",
+            "15",
+            "-1",
+            "14"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "light_conditions",
+          "canonical_name": "light_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "1",
+            "4",
+            "6",
+            "7",
+            "5"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "weather_conditions",
+          "canonical_name": "weather_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 9,
+          "sample_values": [
+            "1",
+            "5",
+            "8",
+            "9",
+            "2"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "road_surface_conditions",
+          "canonical_name": "road_surface_conditions",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 7,
+          "sample_values": [
+            "1",
+            "2",
+            "4",
+            "-1",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "special_conditions_at_site",
+          "canonical_name": "special_conditions_at_site",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 10,
+          "sample_values": [
+            "-1",
+            "0",
+            "5",
+            "4",
+            "9"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "carriageway_hazards_historic",
+          "canonical_name": "carriageway_hazards_historic",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 8,
+          "sample_values": [
+            "-1",
+            "0",
+            "7",
+            "2",
+            "9"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "carriageway_hazards",
+          "canonical_name": "carriageway_hazards",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 14,
+          "sample_values": [
+            "0",
+            "17",
+            "99",
+            "-1",
+            "20"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "urban_or_rural_area",
+          "canonical_name": "urban_or_rural_area",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "1",
+            "2",
+            "3"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "did_police_officer_attend_scene_of_accident",
+          "canonical_name": "did_police_officer_attend_scene_of_accident",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "1",
+            "3",
+            "2"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "trunk_road_flag",
+          "canonical_name": "trunk_road_flag",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 3,
+          "sample_values": [
+            "2",
+            "1",
+            "-1"
+          ],
+          "used_by_pipeline": true
+        },
+        {
+          "column": "lsoa_of_accident_location",
+          "canonical_name": "lsoa_of_accident_location",
+          "dtype_inferred": "str",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "E01012014",
+            "E01012173",
+            "E01012444",
+            "E01012468",
+            "E01012551"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "enhanced_severity_collision",
+          "canonical_name": "enhanced_severity_collision",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 6,
+          "sample_values": [
+            "3",
+            "7",
+            "5",
+            "-1",
+            "1"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_injury_based",
+          "canonical_name": "collision_injury_based",
+          "dtype_inferred": "int64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": 2,
+          "sample_values": [
+            "1",
+            "0"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_serious",
+          "canonical_name": "collision_adjusted_severity_serious",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "0",
+            "1",
+            "0.08579",
+            "0.07893",
+            "0.11055"
+          ],
+          "used_by_pipeline": false
+        },
+        {
+          "column": "collision_adjusted_severity_slight",
+          "canonical_name": "collision_adjusted_severity_slight",
+          "dtype_inferred": "float64",
+          "n_missing": 0,
+          "pct_missing": 0.0,
+          "n_unique": ">=500",
+          "sample_values": [
+            "1",
+            "0",
+            "0.91421",
+            "0.92107",
+            "0.88945"
+          ],
+          "used_by_pipeline": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "model_name": "Logistic Regression",
+  "model_key": "logistic_regression",
+  "training_date": "2026-10-02T17:13:42",
+  "dataset_period": "2021-2025",
+  "years_used": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "years_requested": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "years_missing": [],
+  "features": [
+    "speed_limit",
+    "number_of_vehicles",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "month",
+    "weekday",
+    "is_weekend",
+    "is_rush_hour",
+    "is_night",
+    "multi_vehicle",
+    "road_type",
+    "junction_detail",
+    "junction_control",
+    "light_conditions",
+    "weather_conditions",
+    "road_surface_conditions",
+    "urban_or_rural_area",
+    "first_road_class",
+    "trunk_road_flag",
+    "special_conditions_at_site",
+    "carriageway_hazards",
+    "season",
+    "speed_band",
+    "weather_group",
+    "surface_group",
+    "lighting_group",
+    "junction_group",
+    "road_type_group"
+  ],
+  "n_features_raw": 29,
+  "n_features_after_encoding": 118,
+  "target": "accident_severity",
+  "class_names": [
+    "Slight",
+    "Serious",
+    "Fatal"
+  ],
+  "training_rows": 436730,
+  "training_rows_composition": "train+validation",
+  "validation_rows": 77070,
+  "test_rows": 77071,
+  "test_ids_sha256": "82b979897be5f63f3bd26a081adea0610b5ff571de7be9845f3f677a2f19d677",
+  "validation_metrics_of_selected_model_before_refit": {
+    "n": 77070,
+    "accuracy": 0.5046062021538861,
+    "macro_precision": 0.3837734348621695,
+    "macro_recall": 0.5077460576599587,
+    "macro_f1": 0.3455588972300688,
+    "weighted_f1": 0.5752124097582835,
+    "weighted_precision": 0.6916917006607326,
+    "weighted_recall": 0.5046062021538861,
+    "balanced_accuracy": 0.5077460576599587,
+    "confusion_matrix": [
+      [
+        32904,
+        12881,
+        12630
+      ],
+      [
+        6763,
+        5237,
+        5522
+      ],
+      [
+        160,
+        224,
+        749
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "class_wise": {
+      "Slight": {
+        "precision": 0.8261731990860471,
+        "recall": 0.5632799794573312,
+        "f1": 0.6698560697054213,
+        "support": 58415
+      },
+      "Serious": {
+        "precision": 0.2855195725656962,
+        "recall": 0.2988814062321653,
+        "f1": 0.2920477358911443,
+        "support": 17522
+      },
+      "Fatal": {
+        "precision": 0.039627532934765355,
+        "recall": 0.6610767872903796,
+        "f1": 0.07477288609364081,
+        "support": 1133
+      }
+    },
+    "fatal_recall": 0.6610767872903796,
+    "fatal_precision": 0.039627532934765355,
+    "fatal_f1": 0.07477288609364081,
+    "log_loss": 1.0003579298836482,
+    "roc_auc_ovr_macro": 0.647682526686778,
+    "fatal_average_precision": 0.046457263776085,
+    "fatal_prevalence": 0.014700921240430776
+  },
+  "random_seed": 42,
+  "best_hyperparameters": {
+    "C": 0.01
+  },
+  "preprocessing_version": "1.0.0",
+  "imbalance_strategy": "CLASS_WEIGHT",
+  "split_strategy": "random",
+  "final_fit_seconds": 20.127043899992714,
+  "selection_rationale": {
+    "rule": "score = 0.6*macro_F1 + 0.4*balanced_accuracy on VALIDATION; ties within 0.01 -> faster inference, then smaller model, then more interpretable",
+    "baseline_macro_f1": 0.2874364935847757,
+    "eligibility_note": null,
+    "scores": {
+      "logistic_regression": 0.4104337614020248,
+      "random_forest": 0.4114172539649149,
+      "gradient_boosting": 0.4129189415322173
+    },
+    "tied_within_0.01": [
+      "gradient_boosting",
+      "logistic_regression",
+      "random_forest"
+    ],
+    "highest_score_model": "gradient_boosting",
+    "selected": "logistic_regression",
+    "highest_accuracy_model_for_reference": "random_forest",
+    "fatal_class_warnings": {
+      "logistic_regression": "Fatal recall 0.661, F1 0.075 - POOR",
+      "random_forest": "Fatal recall 0.262, F1 0.088 - POOR",
+      "gradient_boosting": "Fatal recall 0.605, F1 0.078 - POOR"
+    }
+  },
+  "probability_note": "Probabilities come from the trained model but are NOT calibrated, especially with class weighting; read them as relative model scores, not real-world frequencies.",
+  "environment": {
+    "python": "3.13.3",
+    "sklearn": "1.8.0",
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "settings": {
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "random_seed": 42,
+    "split_strategy": "random",
+    "train_frac": 0.7,
+    "val_frac": 0.15,
+    "test_frac": 0.15,
+    "imbalance_strategy": "CLASS_WEIGHT",
+    "smote_ratio": 0.25,
+    "search_n_iter": 8,
+    "cv_folds": 3,
+    "n_jobs": 1,
+    "tuning_max_rows": 100000,
+    "refit_on_train_val": true,
+    "chunk_size": 100000,
+    "max_rows_per_year": null,
+    "num_vehicles_cap": 10
+  },
+  "test_metrics": {
+    "n": 77071,
+    "accuracy": 0.5056506338311427,
+    "macro_precision": 0.38395848229787727,
+    "macro_recall": 0.5053821662287864,
+    "macro_f1": 0.3455378099539626,
+    "weighted_f1": 0.5766593440226571,
+    "weighted_precision": 0.6938448427394511,
+    "weighted_recall": 0.5056506338311427,
+    "balanced_accuracy": 0.5053821662287864,
+    "confusion_matrix": [
+      [
+        33011,
+        13012,
+        12393
+      ],
+      [
+        6607,
+        5220,
+        5695
+      ],
+      [
+        161,
+        232,
+        740
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "class_wise": {
+      "Slight": {
+        "precision": 0.8298599763694412,
+        "recall": 0.5651020268419611,
+        "f1": 0.6723560262742502,
+        "support": 58416
+      },
+      "Serious": {
+        "precision": 0.28271230502599654,
+        "recall": 0.29791119735190047,
+        "f1": 0.290112821652865,
+        "support": 17522
+      },
+      "Fatal": {
+        "precision": 0.03930316549819418,
+        "recall": 0.6531332744924978,
+        "f1": 0.0741445819347728,
+        "support": 1133
+      }
+    },
+    "fatal_recall": 0.6531332744924978,
+    "fatal_precision": 0.03930316549819418,
+    "fatal_f1": 0.0741445819347728,
+    "log_loss": 0.9992721647659202,
+    "roc_auc_ovr_macro": 0.6479020206705878,
+    "fatal_average_precision": 0.04912289703271304,
+    "fatal_prevalence": 0.01470073049525762
+  },
+  "test_evaluated_at": "2026-10-02T17:13:49"
+}

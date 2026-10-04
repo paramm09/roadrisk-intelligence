@@ -1,0 +1,344 @@
+{
+  "created_at": "2026-10-02T17:13:22",
+  "search_method": "RandomizedSearchCV(cv=3, scoring=f1_macro, n_iter=8, n_jobs=1)",
+  "rows_used": 100000,
+  "models": {
+    "logistic_regression": {
+      "best_params": {
+        "C": 0.01
+      },
+      "search": {
+        "method": "RandomizedSearchCV",
+        "scoring": "f1_macro",
+        "cv_folds": 3,
+        "n_jobs": 1,
+        "parameter_distributions": {
+          "C": [
+            0.01,
+            0.1,
+            1.0,
+            10.0
+          ]
+        },
+        "search_space_size": 4,
+        "n_candidates_evaluated": 4,
+        "tuning_rows_used": 100000,
+        "tuning_rows_available": 359660,
+        "tuning_subsample_note": "tuning ran on a stratified subsample of the training split to bound runtime/RAM; the selected parameters are then refit on the FULL training split",
+        "best_params": {
+          "C": 0.01
+        },
+        "best_cv_macro_f1": 0.34391936316073973,
+        "search_seconds": 61.335652599998866,
+        "candidates": [
+          {
+            "params": {
+              "C": 0.01
+            },
+            "mean_cv_macro_f1": 0.34391936316073973,
+            "std_cv_macro_f1": 0.001585810088581208
+          },
+          {
+            "params": {
+              "C": 0.1
+            },
+            "mean_cv_macro_f1": 0.3438460068595626,
+            "std_cv_macro_f1": 0.002061133233976528
+          },
+          {
+            "params": {
+              "C": 1.0
+            },
+            "mean_cv_macro_f1": 0.3436135886169725,
+            "std_cv_macro_f1": 0.002059161901835373
+          },
+          {
+            "params": {
+              "C": 10.0
+            },
+            "mean_cv_macro_f1": 0.3438897409326602,
+            "std_cv_macro_f1": 0.0020655140841389697
+          }
+        ]
+      }
+    },
+    "random_forest": {
+      "best_params": {
+        "n_estimators": 100,
+        "min_samples_leaf": 10,
+        "max_features": 0.3,
+        "max_depth": 18
+      },
+      "search": {
+        "method": "RandomizedSearchCV",
+        "scoring": "f1_macro",
+        "cv_folds": 3,
+        "n_jobs": 1,
+        "parameter_distributions": {
+          "n_estimators": [
+            60,
+            100,
+            150
+          ],
+          "max_depth": [
+            10,
+            14,
+            18
+          ],
+          "min_samples_leaf": [
+            5,
+            10,
+            20
+          ],
+          "max_features": [
+            "sqrt",
+            0.3
+          ]
+        },
+        "search_space_size": 54,
+        "n_candidates_evaluated": 8,
+        "tuning_rows_used": 100000,
+        "tuning_rows_available": 359660,
+        "tuning_subsample_note": "tuning ran on a stratified subsample of the training split to bound runtime/RAM; the selected parameters are then refit on the FULL training split",
+        "best_params": {
+          "n_estimators": 100,
+          "min_samples_leaf": 10,
+          "max_features": 0.3,
+          "max_depth": 18
+        },
+        "best_cv_macro_f1": 0.40083414933536593,
+        "search_seconds": 447.9478627000062,
+        "candidates": [
+          {
+            "params": {
+              "n_estimators": 100,
+              "min_samples_leaf": 5,
+              "max_features": "sqrt",
+              "max_depth": 14
+            },
+            "mean_cv_macro_f1": 0.3889900195517854,
+            "std_cv_macro_f1": 0.0037183924073128124
+          },
+          {
+            "params": {
+              "n_estimators": 100,
+              "min_samples_leaf": 10,
+              "max_features": 0.3,
+              "max_depth": 18
+            },
+            "mean_cv_macro_f1": 0.40083414933536593,
+            "std_cv_macro_f1": 0.005780923849350172
+          },
+          {
+            "params": {
+              "n_estimators": 60,
+              "min_samples_leaf": 10,
+              "max_features": 0.3,
+              "max_depth": 18
+            },
+            "mean_cv_macro_f1": 0.3991112770586578,
+            "std_cv_macro_f1": 0.007186346857626151
+          },
+          {
+            "params": {
+              "n_estimators": 60,
+              "min_samples_leaf": 10,
+              "max_features": 0.3,
+              "max_depth": 10
+            },
+            "mean_cv_macro_f1": 0.3754320148128339,
+            "std_cv_macro_f1": 0.003836870824868158
+          },
+          {
+            "params": {
+              "n_estimators": 150,
+              "min_samples_leaf": 20,
+              "max_features": "sqrt",
+              "max_depth": 18
+            },
+            "mean_cv_macro_f1": 0.38068984763696084,
+            "std_cv_macro_f1": 0.00338759601243425
+          },
+          {
+            "params": {
+              "n_estimators": 150,
+              "min_samples_leaf": 10,
+              "max_features": "sqrt",
+              "max_depth": 10
+            },
+            "mean_cv_macro_f1": 0.36612246460654946,
+            "std_cv_macro_f1": 0.0037173817624050103
+          },
+          {
+            "params": {
+              "n_estimators": 150,
+              "min_samples_leaf": 20,
+              "max_features": 0.3,
+              "max_depth": 10
+            },
+            "mean_cv_macro_f1": 0.3743596643487593,
+            "std_cv_macro_f1": 0.004220900067157747
+          },
+          {
+            "params": {
+              "n_estimators": 100,
+              "min_samples_leaf": 20,
+              "max_features": 0.3,
+              "max_depth": 18
+            },
+            "mean_cv_macro_f1": 0.3900017969570299,
+            "std_cv_macro_f1": 0.005387389567641783
+          }
+        ]
+      }
+    },
+    "gradient_boosting": {
+      "best_params": {
+        "min_samples_leaf": 20,
+        "max_leaf_nodes": 63,
+        "max_iter": 200,
+        "learning_rate": 0.1,
+        "l2_regularization": 0.1
+      },
+      "search": {
+        "method": "RandomizedSearchCV",
+        "scoring": "f1_macro",
+        "cv_folds": 3,
+        "n_jobs": 1,
+        "parameter_distributions": {
+          "learning_rate": [
+            0.03,
+            0.06,
+            0.1
+          ],
+          "max_iter": [
+            100,
+            200,
+            300
+          ],
+          "max_leaf_nodes": [
+            15,
+            31,
+            63
+          ],
+          "l2_regularization": [
+            0.0,
+            0.1,
+            1.0
+          ],
+          "min_samples_leaf": [
+            20,
+            50,
+            100
+          ]
+        },
+        "search_space_size": 243,
+        "n_candidates_evaluated": 8,
+        "tuning_rows_used": 100000,
+        "tuning_rows_available": 359660,
+        "tuning_subsample_note": "tuning ran on a stratified subsample of the training split to bound runtime/RAM; the selected parameters are then refit on the FULL training split",
+        "best_params": {
+          "min_samples_leaf": 20,
+          "max_leaf_nodes": 63,
+          "max_iter": 200,
+          "learning_rate": 0.1,
+          "l2_regularization": 0.1
+        },
+        "best_cv_macro_f1": 0.36395015196365477,
+        "search_seconds": 69.68851799999538,
+        "candidates": [
+          {
+            "params": {
+              "min_samples_leaf": 20,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "learning_rate": 0.03,
+              "l2_regularization": 0.0
+            },
+            "mean_cv_macro_f1": 0.36150852653796006,
+            "std_cv_macro_f1": 0.001301154233065325
+          },
+          {
+            "params": {
+              "min_samples_leaf": 20,
+              "max_leaf_nodes": 63,
+              "max_iter": 100,
+              "learning_rate": 0.03,
+              "l2_regularization": 0.0
+            },
+            "mean_cv_macro_f1": 0.36150852653796006,
+            "std_cv_macro_f1": 0.001301154233065325
+          },
+          {
+            "params": {
+              "min_samples_leaf": 100,
+              "max_leaf_nodes": 63,
+              "max_iter": 200,
+              "learning_rate": 0.1,
+              "l2_regularization": 0.1
+            },
+            "mean_cv_macro_f1": 0.3599642437733111,
+            "std_cv_macro_f1": 0.0007388186912562944
+          },
+          {
+            "params": {
+              "min_samples_leaf": 50,
+              "max_leaf_nodes": 63,
+              "max_iter": 200,
+              "learning_rate": 0.1,
+              "l2_regularization": 1.0
+            },
+            "mean_cv_macro_f1": 0.36175965929194204,
+            "std_cv_macro_f1": 0.001425776612738546
+          },
+          {
+            "params": {
+              "min_samples_leaf": 50,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "learning_rate": 0.1,
+              "l2_regularization": 1.0
+            },
+            "mean_cv_macro_f1": 0.3551859089317457,
+            "std_cv_macro_f1": 0.0015811041919492807
+          },
+          {
+            "params": {
+              "min_samples_leaf": 50,
+              "max_leaf_nodes": 31,
+              "max_iter": 200,
+              "learning_rate": 0.03,
+              "l2_regularization": 1.0
+            },
+            "mean_cv_macro_f1": 0.3551027351173062,
+            "std_cv_macro_f1": 0.0034947043068399015
+          },
+          {
+            "params": {
+              "min_samples_leaf": 100,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "learning_rate": 0.06,
+              "l2_regularization": 1.0
+            },
+            "mean_cv_macro_f1": 0.35901267153445726,
+            "std_cv_macro_f1": 0.0017600461352019292
+          },
+          {
+            "params": {
+              "min_samples_leaf": 20,
+              "max_leaf_nodes": 63,
+              "max_iter": 200,
+              "learning_rate": 0.1,
+              "l2_regularization": 0.1
+            },
+            "mean_cv_macro_f1": 0.36395015196365477,
+            "std_cv_macro_f1": 0.0018757276912612047
+          }
+        ]
+      }
+    }
+  },
+  "baseline": "DummyClassifier (most frequent) - no hyperparameters.",
+  "note": "CV metrics are mean validation-fold macro F1 on a stratified subsample of the training split."
+}

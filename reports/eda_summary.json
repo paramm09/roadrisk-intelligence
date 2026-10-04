@@ -1,0 +1,1786 @@
+{
+  "rows_analysed": 436730,
+  "excluded_from_eda": "test split",
+  "target_distribution": {
+    "Slight": 331019,
+    "Serious": 99291,
+    "Fatal": 6420
+  },
+  "numeric_distributions": {
+    "speed_limit": {
+      "count": 436727.0,
+      "mean": 35.90556716918945,
+      "std": 14.373144149780273,
+      "min": 20.0,
+      "25%": 30.0,
+      "50%": 30.0,
+      "75%": 40.0,
+      "max": 70.0
+    },
+    "number_of_vehicles": {
+      "count": 436730.0,
+      "mean": 1.824037790298462,
+      "std": 0.6832787990570068,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 2.0,
+      "max": 10.0
+    },
+    "hour": {
+      "count": 436730.0,
+      "mean": 13.737881660461426,
+      "std": 5.151212692260742,
+      "min": 0.0,
+      "25%": 10.0,
+      "50%": 14.0,
+      "75%": 17.0,
+      "max": 23.0
+    }
+  },
+  "categorical_distributions_pct": {
+    "road_type": {
+      "6": 72.606,
+      "3": 14.818,
+      "1": 6.084,
+      "unknown": 2.539,
+      "2": 2.23,
+      "7": 1.723
+    },
+    "junction_detail": {
+      "0": 49.121,
+      "13": 27.684,
+      "16": 9.249,
+      "19": 6.06,
+      "unknown": 4.164,
+      "18": 2.174,
+      "17": 1.549
+    },
+    "junction_control": {
+      "unknown": 44.637,
+      "4": 43.28,
+      "2": 10.974,
+      "3": 0.678,
+      "1": 0.431
+    },
+    "light_conditions": {
+      "1": 71.707,
+      "4": 20.553,
+      "6": 5.331,
+      "7": 1.681,
+      "5": 0.722,
+      "unknown": 0.007
+    },
+    "weather_conditions": {
+      "1": 80.543,
+      "2": 10.809,
+      "8": 3.106,
+      "unknown": 2.849,
+      "5": 1.01,
+      "4": 0.871,
+      "7": 0.417,
+      "3": 0.35,
+      "6": 0.046
+    },
+    "road_surface_conditions": {
+      "1": 72.897,
+      "2": 23.409,
+      "unknown": 2.004,
+      "4": 1.293,
+      "3": 0.244,
+      "5": 0.154
+    },
+    "urban_or_rural_area": {
+      "1": 67.136,
+      "2": 32.852,
+      "unknown": 0.011
+    },
+    "first_road_class": {
+      "3": 43.941,
+      "6": 35.85,
+      "4": 12.562,
+      "5": 4.383,
+      "1": 3.024,
+      "2": 0.239,
+      "unknown": 0.001
+    },
+    "trunk_road_flag": {
+      "2": 86.544,
+      "unknown": 7.05,
+      "1": 6.407
+    },
+    "special_conditions_at_site": {
+      "0": 66.885,
+      "unknown": 31.506,
+      "4": 0.87,
+      "1": 0.206,
+      "5": 0.16,
+      "7": 0.15,
+      "3": 0.11,
+      "6": 0.078,
+      "2": 0.034
+    },
+    "carriageway_hazards": {
+      "0": 92.151,
+      "unknown": 1.922,
+      "99": 1.779,
+      "13": 1.18,
+      "17": 0.94,
+      "11": 0.315,
+      "21": 0.294,
+      "20": 0.286,
+      "15": 0.251,
+      "19": 0.209,
+      "16": 0.204,
+      "12": 0.179,
+      "18": 0.174,
+      "14": 0.117
+    },
+    "season": {
+      "autumn": 26.823,
+      "summer": 26.16,
+      "spring": 24.4,
+      "winter": 22.617
+    },
+    "speed_band": {
+      "30": 52.007,
+      "20_or_less": 17.139,
+      "40_50": 13.14,
+      "60": 12.209,
+      "70": 5.505,
+      "unknown": 0.001
+    },
+    "weather_group": {
+      "fine": 80.543,
+      "rain": 11.819,
+      "other": 3.106,
+      "unknown": 2.849,
+      "high_wind": 0.871,
+      "fog": 0.417,
+      "snow": 0.396
+    },
+    "surface_group": {
+      "dry": 72.897,
+      "wet": 23.563,
+      "unknown": 2.004,
+      "snow_ice": 1.536
+    },
+    "lighting_group": {
+      "daylight": 71.707,
+      "dark_lit": 20.553,
+      "dark_unlit": 7.733,
+      "unknown": 0.007
+    },
+    "junction_group": {
+      "unknown": 50.879,
+      "no_junction": 49.121
+    },
+    "road_type_group": {
+      "single_carriageway": 72.606,
+      "dual_carriageway": 14.818,
+      "roundabout": 6.084,
+      "one_way_or_slip": 3.953,
+      "unknown": 2.539
+    }
+  },
+  "severity_by_feature": {
+    "road_type": {
+      "6": {
+        "n": 317092,
+        "pct_Slight": 74.044,
+        "pct_Serious": 24.425,
+        "pct_Fatal": 1.531
+      },
+      "3": {
+        "n": 64714,
+        "pct_Slight": 77.17,
+        "pct_Serious": 20.833,
+        "pct_Fatal": 1.996
+      },
+      "1": {
+        "n": 26569,
+        "pct_Slight": 82.86,
+        "pct_Serious": 16.625,
+        "pct_Fatal": 0.516
+      },
+      "unknown": {
+        "n": 11089,
+        "pct_Slight": 90.982,
+        "pct_Serious": 8.865,
+        "pct_Fatal": 0.153
+      },
+      "2": {
+        "n": 9740,
+        "pct_Slight": 82.053,
+        "pct_Serious": 17.546,
+        "pct_Fatal": 0.4
+      },
+      "7": {
+        "n": 7526,
+        "pct_Slight": 82.328,
+        "pct_Serious": 16.596,
+        "pct_Fatal": 1.076
+      }
+    },
+    "junction_detail": {
+      "0": {
+        "n": 214525,
+        "pct_Slight": 74.178,
+        "pct_Serious": 23.781,
+        "pct_Fatal": 2.04
+      },
+      "13": {
+        "n": 120905,
+        "pct_Slight": 76.526,
+        "pct_Serious": 22.493,
+        "pct_Fatal": 0.981
+      },
+      "16": {
+        "n": 40391,
+        "pct_Slight": 77.141,
+        "pct_Serious": 22.017,
+        "pct_Fatal": 0.842
+      },
+      "19": {
+        "n": 26466,
+        "pct_Slight": 75.678,
+        "pct_Serious": 23.237,
+        "pct_Fatal": 1.084
+      },
+      "unknown": {
+        "n": 18186,
+        "pct_Slight": 86.704,
+        "pct_Serious": 12.922,
+        "pct_Fatal": 0.374
+      },
+      "18": {
+        "n": 9493,
+        "pct_Slight": 75.656,
+        "pct_Serious": 23.027,
+        "pct_Fatal": 1.317
+      },
+      "17": {
+        "n": 6764,
+        "pct_Slight": 77.277,
+        "pct_Serious": 22.176,
+        "pct_Fatal": 0.547
+      }
+    },
+    "junction_control": {
+      "unknown": {
+        "n": 194944,
+        "pct_Slight": 73.722,
+        "pct_Serious": 24.118,
+        "pct_Fatal": 2.161
+      },
+      "4": {
+        "n": 189018,
+        "pct_Slight": 76.71,
+        "pct_Serious": 22.312,
+        "pct_Fatal": 0.978
+      },
+      "2": {
+        "n": 47926,
+        "pct_Slight": 80.357,
+        "pct_Serious": 18.946,
+        "pct_Fatal": 0.697
+      },
+      "3": {
+        "n": 2960,
+        "pct_Slight": 78.142,
+        "pct_Serious": 21.216,
+        "pct_Fatal": 0.642
+      },
+      "1": {
+        "n": 1882,
+        "pct_Slight": 78.746,
+        "pct_Serious": 20.935,
+        "pct_Fatal": 0.319
+      }
+    },
+    "light_conditions": {
+      "1": {
+        "n": 313164,
+        "pct_Slight": 76.793,
+        "pct_Serious": 22.0,
+        "pct_Fatal": 1.207
+      },
+      "4": {
+        "n": 89763,
+        "pct_Slight": 74.931,
+        "pct_Serious": 23.597,
+        "pct_Fatal": 1.473
+      },
+      "6": {
+        "n": 23281,
+        "pct_Slight": 64.95,
+        "pct_Serious": 30.209,
+        "pct_Fatal": 4.841
+      },
+      "7": {
+        "n": 7340,
+        "pct_Slight": 80.232,
+        "pct_Serious": 18.188,
+        "pct_Fatal": 1.58
+      },
+      "5": {
+        "n": 3153,
+        "pct_Slight": 71.107,
+        "pct_Serious": 26.578,
+        "pct_Fatal": 2.315
+      },
+      "unknown": {
+        "n": 29,
+        "pct_Slight": 68.966,
+        "pct_Serious": 27.586,
+        "pct_Fatal": 3.448
+      }
+    },
+    "weather_conditions": {
+      "1": {
+        "n": 351756,
+        "pct_Slight": 75.27,
+        "pct_Serious": 23.216,
+        "pct_Fatal": 1.514
+      },
+      "2": {
+        "n": 47204,
+        "pct_Slight": 75.941,
+        "pct_Serious": 22.646,
+        "pct_Fatal": 1.413
+      },
+      "8": {
+        "n": 13564,
+        "pct_Slight": 80.124,
+        "pct_Serious": 19.124,
+        "pct_Fatal": 0.752
+      },
+      "unknown": {
+        "n": 12441,
+        "pct_Slight": 88.184,
+        "pct_Serious": 11.494,
+        "pct_Fatal": 0.322
+      },
+      "5": {
+        "n": 4411,
+        "pct_Slight": 73.203,
+        "pct_Serious": 24.326,
+        "pct_Fatal": 2.471
+      },
+      "4": {
+        "n": 3804,
+        "pct_Slight": 70.268,
+        "pct_Serious": 26.998,
+        "pct_Fatal": 2.734
+      },
+      "7": {
+        "n": 1820,
+        "pct_Slight": 72.473,
+        "pct_Serious": 24.505,
+        "pct_Fatal": 3.022
+      },
+      "3": {
+        "n": 1529,
+        "pct_Slight": 77.305,
+        "pct_Serious": 21.452,
+        "pct_Fatal": 1.243
+      },
+      "6": {
+        "n": 201,
+        "pct_Slight": 81.095,
+        "pct_Serious": 18.905,
+        "pct_Fatal": 0.0
+      }
+    },
+    "road_surface_conditions": {
+      "1": {
+        "n": 318364,
+        "pct_Slight": 75.696,
+        "pct_Serious": 22.882,
+        "pct_Fatal": 1.422
+      },
+      "2": {
+        "n": 102234,
+        "pct_Slight": 74.681,
+        "pct_Serious": 23.577,
+        "pct_Fatal": 1.742
+      },
+      "unknown": {
+        "n": 8751,
+        "pct_Slight": 91.281,
+        "pct_Serious": 8.593,
+        "pct_Fatal": 0.126
+      },
+      "4": {
+        "n": 5645,
+        "pct_Slight": 77.715,
+        "pct_Serious": 21.098,
+        "pct_Fatal": 1.187
+      },
+      "3": {
+        "n": 1065,
+        "pct_Slight": 77.183,
+        "pct_Serious": 21.502,
+        "pct_Fatal": 1.315
+      },
+      "5": {
+        "n": 671,
+        "pct_Slight": 72.131,
+        "pct_Serious": 24.739,
+        "pct_Fatal": 3.13
+      }
+    },
+    "urban_or_rural_area": {
+      "1": {
+        "n": 293205,
+        "pct_Slight": 78.299,
+        "pct_Serious": 20.904,
+        "pct_Fatal": 0.797
+      },
+      "2": {
+        "n": 143475,
+        "pct_Slight": 70.679,
+        "pct_Serious": 26.476,
+        "pct_Fatal": 2.846
+      },
+      "unknown": {
+        "n": 50,
+        "pct_Slight": 72.0,
+        "pct_Serious": 28.0,
+        "pct_Fatal": 0.0
+      }
+    },
+    "first_road_class": {
+      "3": {
+        "n": 191904,
+        "pct_Slight": 75.897,
+        "pct_Serious": 22.318,
+        "pct_Fatal": 1.785
+      },
+      "6": {
+        "n": 156569,
+        "pct_Slight": 75.785,
+        "pct_Serious": 23.254,
+        "pct_Fatal": 0.961
+      },
+      "4": {
+        "n": 54860,
+        "pct_Slight": 73.274,
+        "pct_Serious": 25.018,
+        "pct_Fatal": 1.708
+      },
+      "5": {
+        "n": 19144,
+        "pct_Slight": 80.307,
+        "pct_Serious": 18.69,
+        "pct_Fatal": 1.003
+      },
+      "1": {
+        "n": 13205,
+        "pct_Slight": 78.455,
+        "pct_Serious": 19.076,
+        "pct_Fatal": 2.469
+      },
+      "2": {
+        "n": 1042,
+        "pct_Slight": 74.472,
+        "pct_Serious": 22.169,
+        "pct_Fatal": 3.359
+      },
+      "unknown": {
+        "n": 6,
+        "pct_Slight": 100.0,
+        "pct_Serious": 0.0,
+        "pct_Fatal": 0.0
+      }
+    },
+    "trunk_road_flag": {
+      "2": {
+        "n": 377962,
+        "pct_Slight": 76.732,
+        "pct_Serious": 22.037,
+        "pct_Fatal": 1.231
+      },
+      "unknown": {
+        "n": 30788,
+        "pct_Slight": 63.083,
+        "pct_Serious": 33.766,
+        "pct_Fatal": 3.151
+      },
+      "1": {
+        "n": 27980,
+        "pct_Slight": 77.119,
+        "pct_Serious": 20.025,
+        "pct_Fatal": 2.856
+      }
+    },
+    "special_conditions_at_site": {
+      "0": {
+        "n": 292107,
+        "pct_Slight": 76.693,
+        "pct_Serious": 21.822,
+        "pct_Fatal": 1.484
+      },
+      "unknown": {
+        "n": 137598,
+        "pct_Slight": 73.83,
+        "pct_Serious": 24.709,
+        "pct_Fatal": 1.461
+      },
+      "4": {
+        "n": 3799,
+        "pct_Slight": 78.6,
+        "pct_Serious": 20.084,
+        "pct_Fatal": 1.316
+      },
+      "1": {
+        "n": 900,
+        "pct_Slight": 81.556,
+        "pct_Serious": 17.889,
+        "pct_Fatal": 0.556
+      },
+      "5": {
+        "n": 697,
+        "pct_Slight": 64.706,
+        "pct_Serious": 34.29,
+        "pct_Fatal": 1.004
+      },
+      "7": {
+        "n": 657,
+        "pct_Slight": 74.734,
+        "pct_Serious": 24.505,
+        "pct_Fatal": 0.761
+      },
+      "3": {
+        "n": 480,
+        "pct_Slight": 77.5,
+        "pct_Serious": 21.875,
+        "pct_Fatal": 0.625
+      },
+      "6": {
+        "n": 342,
+        "pct_Slight": 72.807,
+        "pct_Serious": 26.608,
+        "pct_Fatal": 0.585
+      },
+      "2": {
+        "n": 150,
+        "pct_Slight": 80.0,
+        "pct_Serious": 18.667,
+        "pct_Fatal": 1.333
+      }
+    },
+    "carriageway_hazards": {
+      "0": {
+        "n": 402451,
+        "pct_Slight": 75.419,
+        "pct_Serious": 23.07,
+        "pct_Fatal": 1.511
+      },
+      "unknown": {
+        "n": 8392,
+        "pct_Slight": 83.472,
+        "pct_Serious": 15.67,
+        "pct_Fatal": 0.858
+      },
+      "99": {
+        "n": 7770,
+        "pct_Slight": 92.677,
+        "pct_Serious": 7.272,
+        "pct_Fatal": 0.051
+      },
+      "13": {
+        "n": 5152,
+        "pct_Slight": 77.679,
+        "pct_Serious": 20.963,
+        "pct_Fatal": 1.359
+      },
+      "17": {
+        "n": 4104,
+        "pct_Slight": 68.397,
+        "pct_Serious": 29.288,
+        "pct_Fatal": 2.315
+      },
+      "11": {
+        "n": 1376,
+        "pct_Slight": 79.433,
+        "pct_Serious": 19.84,
+        "pct_Fatal": 0.727
+      },
+      "21": {
+        "n": 1286,
+        "pct_Slight": 65.163,
+        "pct_Serious": 33.67,
+        "pct_Fatal": 1.166
+      },
+      "20": {
+        "n": 1251,
+        "pct_Slight": 71.863,
+        "pct_Serious": 27.258,
+        "pct_Fatal": 0.879
+      },
+      "15": {
+        "n": 1095,
+        "pct_Slight": 73.516,
+        "pct_Serious": 26.027,
+        "pct_Fatal": 0.457
+      },
+      "19": {
+        "n": 914,
+        "pct_Slight": 76.696,
+        "pct_Serious": 22.21,
+        "pct_Fatal": 1.094
+      },
+      "16": {
+        "n": 889,
+        "pct_Slight": 77.053,
+        "pct_Serious": 22.047,
+        "pct_Fatal": 0.9
+      },
+      "12": {
+        "n": 782,
+        "pct_Slight": 74.169,
+        "pct_Serious": 24.552,
+        "pct_Fatal": 1.279
+      },
+      "18": {
+        "n": 759,
+        "pct_Slight": 68.906,
+        "pct_Serious": 27.536,
+        "pct_Fatal": 3.557
+      },
+      "14": {
+        "n": 509,
+        "pct_Slight": 69.548,
+        "pct_Serious": 29.862,
+        "pct_Fatal": 0.589
+      }
+    },
+    "season": {
+      "autumn": {
+        "n": 117146,
+        "pct_Slight": 75.999,
+        "pct_Serious": 22.591,
+        "pct_Fatal": 1.409
+      },
+      "summer": {
+        "n": 114247,
+        "pct_Slight": 74.6,
+        "pct_Serious": 23.849,
+        "pct_Fatal": 1.551
+      },
+      "spring": {
+        "n": 106563,
+        "pct_Slight": 75.906,
+        "pct_Serious": 22.68,
+        "pct_Fatal": 1.414
+      },
+      "winter": {
+        "n": 98774,
+        "pct_Slight": 76.815,
+        "pct_Serious": 21.677,
+        "pct_Fatal": 1.508
+      }
+    },
+    "speed_band": {
+      "30": {
+        "n": 227129,
+        "pct_Slight": 77.337,
+        "pct_Serious": 21.809,
+        "pct_Fatal": 0.855
+      },
+      "20_or_less": {
+        "n": 74852,
+        "pct_Slight": 80.339,
+        "pct_Serious": 19.181,
+        "pct_Fatal": 0.481
+      },
+      "40_50": {
+        "n": 57386,
+        "pct_Slight": 73.41,
+        "pct_Serious": 24.415,
+        "pct_Fatal": 2.175
+      },
+      "60": {
+        "n": 53320,
+        "pct_Slight": 65.557,
+        "pct_Serious": 30.563,
+        "pct_Fatal": 3.88
+      },
+      "70": {
+        "n": 24040,
+        "pct_Slight": 75.483,
+        "pct_Serious": 21.181,
+        "pct_Fatal": 3.336
+      },
+      "unknown": {
+        "n": 3,
+        "pct_Slight": 66.667,
+        "pct_Serious": 33.333,
+        "pct_Fatal": 0.0
+      }
+    },
+    "weather_group": {
+      "fine": {
+        "n": 351756,
+        "pct_Slight": 75.27,
+        "pct_Serious": 23.216,
+        "pct_Fatal": 1.514
+      },
+      "rain": {
+        "n": 51615,
+        "pct_Slight": 75.707,
+        "pct_Serious": 22.79,
+        "pct_Fatal": 1.503
+      },
+      "other": {
+        "n": 13564,
+        "pct_Slight": 80.124,
+        "pct_Serious": 19.124,
+        "pct_Fatal": 0.752
+      },
+      "unknown": {
+        "n": 12441,
+        "pct_Slight": 88.184,
+        "pct_Serious": 11.494,
+        "pct_Fatal": 0.322
+      },
+      "high_wind": {
+        "n": 3804,
+        "pct_Slight": 70.268,
+        "pct_Serious": 26.998,
+        "pct_Fatal": 2.734
+      },
+      "fog": {
+        "n": 1820,
+        "pct_Slight": 72.473,
+        "pct_Serious": 24.505,
+        "pct_Fatal": 3.022
+      },
+      "snow": {
+        "n": 1730,
+        "pct_Slight": 77.746,
+        "pct_Serious": 21.156,
+        "pct_Fatal": 1.098
+      }
+    },
+    "surface_group": {
+      "dry": {
+        "n": 318364,
+        "pct_Slight": 75.696,
+        "pct_Serious": 22.882,
+        "pct_Fatal": 1.422
+      },
+      "wet": {
+        "n": 102905,
+        "pct_Slight": 74.664,
+        "pct_Serious": 23.585,
+        "pct_Fatal": 1.751
+      },
+      "unknown": {
+        "n": 8751,
+        "pct_Slight": 91.281,
+        "pct_Serious": 8.593,
+        "pct_Fatal": 0.126
+      },
+      "snow_ice": {
+        "n": 6710,
+        "pct_Slight": 77.63,
+        "pct_Serious": 21.162,
+        "pct_Fatal": 1.207
+      }
+    },
+    "lighting_group": {
+      "daylight": {
+        "n": 313164,
+        "pct_Slight": 76.793,
+        "pct_Serious": 22.0,
+        "pct_Fatal": 1.207
+      },
+      "dark_lit": {
+        "n": 89763,
+        "pct_Slight": 74.931,
+        "pct_Serious": 23.597,
+        "pct_Fatal": 1.473
+      },
+      "dark_unlit": {
+        "n": 33774,
+        "pct_Slight": 68.846,
+        "pct_Serious": 27.258,
+        "pct_Fatal": 3.896
+      },
+      "unknown": {
+        "n": 29,
+        "pct_Slight": 68.966,
+        "pct_Serious": 27.586,
+        "pct_Fatal": 3.448
+      }
+    },
+    "junction_group": {
+      "unknown": {
+        "n": 222205,
+        "pct_Slight": 77.356,
+        "pct_Serious": 21.725,
+        "pct_Fatal": 0.919
+      },
+      "no_junction": {
+        "n": 214525,
+        "pct_Slight": 74.178,
+        "pct_Serious": 23.781,
+        "pct_Fatal": 2.04
+      }
+    },
+    "road_type_group": {
+      "single_carriageway": {
+        "n": 317092,
+        "pct_Slight": 74.044,
+        "pct_Serious": 24.425,
+        "pct_Fatal": 1.531
+      },
+      "dual_carriageway": {
+        "n": 64714,
+        "pct_Slight": 77.17,
+        "pct_Serious": 20.833,
+        "pct_Fatal": 1.996
+      },
+      "roundabout": {
+        "n": 26569,
+        "pct_Slight": 82.86,
+        "pct_Serious": 16.625,
+        "pct_Fatal": 0.516
+      },
+      "one_way_or_slip": {
+        "n": 17266,
+        "pct_Slight": 82.173,
+        "pct_Serious": 17.132,
+        "pct_Fatal": 0.695
+      },
+      "unknown": {
+        "n": 11089,
+        "pct_Slight": 90.982,
+        "pct_Serious": 8.865,
+        "pct_Fatal": 0.153
+      }
+    },
+    "speed_limit": {
+      "20.0": {
+        "n": 74852,
+        "pct_Slight": 80.339,
+        "pct_Serious": 19.181,
+        "pct_Fatal": 0.481
+      },
+      "30.0": {
+        "n": 227129,
+        "pct_Slight": 77.337,
+        "pct_Serious": 21.809,
+        "pct_Fatal": 0.855
+      },
+      "40.0": {
+        "n": 38128,
+        "pct_Slight": 74.402,
+        "pct_Serious": 23.822,
+        "pct_Fatal": 1.776
+      },
+      "50.0": {
+        "n": 19258,
+        "pct_Slight": 71.446,
+        "pct_Serious": 25.589,
+        "pct_Fatal": 2.965
+      },
+      "60.0": {
+        "n": 53320,
+        "pct_Slight": 65.557,
+        "pct_Serious": 30.563,
+        "pct_Fatal": 3.88
+      },
+      "70.0": {
+        "n": 24040,
+        "pct_Slight": 75.483,
+        "pct_Serious": 21.181,
+        "pct_Fatal": 3.336
+      }
+    },
+    "number_of_vehicles": {
+      "1.0": {
+        "n": 127916,
+        "pct_Slight": 68.1,
+        "pct_Serious": 29.669,
+        "pct_Fatal": 2.231
+      },
+      "2.0": {
+        "n": 270393,
+        "pct_Slight": 79.629,
+        "pct_Serious": 19.401,
+        "pct_Fatal": 0.97
+      },
+      "3.0": {
+        "n": 29760,
+        "pct_Slight": 75.235,
+        "pct_Serious": 22.524,
+        "pct_Fatal": 2.241
+      },
+      "4.0": {
+        "n": 6162,
+        "pct_Slight": 73.126,
+        "pct_Serious": 24.083,
+        "pct_Fatal": 2.791
+      },
+      "5.0": {
+        "n": 1645,
+        "pct_Slight": 69.909,
+        "pct_Serious": 26.14,
+        "pct_Fatal": 3.951
+      },
+      "6.0": {
+        "n": 502,
+        "pct_Slight": 64.343,
+        "pct_Serious": 31.275,
+        "pct_Fatal": 4.382
+      },
+      "7.0": {
+        "n": 202,
+        "pct_Slight": 66.832,
+        "pct_Serious": 31.188,
+        "pct_Fatal": 1.98
+      },
+      "8.0": {
+        "n": 71,
+        "pct_Slight": 67.606,
+        "pct_Serious": 25.352,
+        "pct_Fatal": 7.042
+      },
+      "9.0": {
+        "n": 27,
+        "pct_Slight": 55.556,
+        "pct_Serious": 37.037,
+        "pct_Fatal": 7.407
+      },
+      "10.0": {
+        "n": 52,
+        "pct_Slight": 59.615,
+        "pct_Serious": 30.769,
+        "pct_Fatal": 9.615
+      }
+    },
+    "hour": {
+      "0.0": {
+        "n": 6842,
+        "pct_Slight": 69.059,
+        "pct_Serious": 27.609,
+        "pct_Fatal": 3.332
+      },
+      "1.0": {
+        "n": 4764,
+        "pct_Slight": 70.235,
+        "pct_Serious": 26.721,
+        "pct_Fatal": 3.044
+      },
+      "2.0": {
+        "n": 3531,
+        "pct_Slight": 69.046,
+        "pct_Serious": 27.244,
+        "pct_Fatal": 3.71
+      },
+      "3.0": {
+        "n": 2918,
+        "pct_Slight": 69.5,
+        "pct_Serious": 26.696,
+        "pct_Fatal": 3.804
+      },
+      "4.0": {
+        "n": 2655,
+        "pct_Slight": 69.19,
+        "pct_Serious": 27.043,
+        "pct_Fatal": 3.766
+      },
+      "5.0": {
+        "n": 4108,
+        "pct_Slight": 70.57,
+        "pct_Serious": 26.193,
+        "pct_Fatal": 3.238
+      },
+      "6.0": {
+        "n": 8127,
+        "pct_Slight": 73.52,
+        "pct_Serious": 24.548,
+        "pct_Fatal": 1.932
+      },
+      "7.0": {
+        "n": 17532,
+        "pct_Slight": 76.808,
+        "pct_Serious": 21.983,
+        "pct_Fatal": 1.209
+      },
+      "8.0": {
+        "n": 28117,
+        "pct_Slight": 80.553,
+        "pct_Serious": 18.693,
+        "pct_Fatal": 0.754
+      },
+      "9.0": {
+        "n": 19248,
+        "pct_Slight": 78.164,
+        "pct_Serious": 20.594,
+        "pct_Fatal": 1.242
+      },
+      "10.0": {
+        "n": 19081,
+        "pct_Slight": 76.285,
+        "pct_Serious": 22.315,
+        "pct_Fatal": 1.399
+      },
+      "11.0": {
+        "n": 22172,
+        "pct_Slight": 76.285,
+        "pct_Serious": 22.28,
+        "pct_Fatal": 1.434
+      },
+      "12.0": {
+        "n": 25335,
+        "pct_Slight": 75.852,
+        "pct_Serious": 22.763,
+        "pct_Fatal": 1.385
+      },
+      "13.0": {
+        "n": 26181,
+        "pct_Slight": 76.41,
+        "pct_Serious": 22.287,
+        "pct_Fatal": 1.302
+      },
+      "14.0": {
+        "n": 27999,
+        "pct_Slight": 75.924,
+        "pct_Serious": 22.747,
+        "pct_Fatal": 1.329
+      },
+      "15.0": {
+        "n": 35888,
+        "pct_Slight": 76.641,
+        "pct_Serious": 22.283,
+        "pct_Fatal": 1.076
+      },
+      "16.0": {
+        "n": 36378,
+        "pct_Slight": 76.293,
+        "pct_Serious": 22.591,
+        "pct_Fatal": 1.116
+      },
+      "17.0": {
+        "n": 37925,
+        "pct_Slight": 76.952,
+        "pct_Serious": 21.956,
+        "pct_Fatal": 1.092
+      },
+      "18.0": {
+        "n": 30465,
+        "pct_Slight": 76.429,
+        "pct_Serious": 22.393,
+        "pct_Fatal": 1.178
+      },
+      "19.0": {
+        "n": 23569,
+        "pct_Slight": 75.701,
+        "pct_Serious": 22.861,
+        "pct_Fatal": 1.438
+      },
+      "20.0": {
+        "n": 17458,
+        "pct_Slight": 73.983,
+        "pct_Serious": 24.161,
+        "pct_Fatal": 1.856
+      },
+      "21.0": {
+        "n": 14368,
+        "pct_Slight": 72.501,
+        "pct_Serious": 25.188,
+        "pct_Fatal": 2.311
+      },
+      "22.0": {
+        "n": 12459,
+        "pct_Slight": 71.659,
+        "pct_Serious": 26.013,
+        "pct_Fatal": 2.328
+      },
+      "23.0": {
+        "n": 9610,
+        "pct_Slight": 71.082,
+        "pct_Serious": 26.285,
+        "pct_Fatal": 2.633
+      }
+    },
+    "weekday": {
+      "0.0": {
+        "n": 60045,
+        "pct_Slight": 76.424,
+        "pct_Serious": 22.168,
+        "pct_Fatal": 1.407
+      },
+      "1.0": {
+        "n": 63559,
+        "pct_Slight": 77.059,
+        "pct_Serious": 21.66,
+        "pct_Fatal": 1.281
+      },
+      "2.0": {
+        "n": 65304,
+        "pct_Slight": 76.645,
+        "pct_Serious": 22.064,
+        "pct_Fatal": 1.291
+      },
+      "3.0": {
+        "n": 66266,
+        "pct_Slight": 76.736,
+        "pct_Serious": 21.951,
+        "pct_Fatal": 1.313
+      },
+      "4.0": {
+        "n": 72528,
+        "pct_Slight": 76.274,
+        "pct_Serious": 22.285,
+        "pct_Fatal": 1.441
+      },
+      "5.0": {
+        "n": 59975,
+        "pct_Slight": 73.731,
+        "pct_Serious": 24.549,
+        "pct_Fatal": 1.721
+      },
+      "6.0": {
+        "n": 49053,
+        "pct_Slight": 72.799,
+        "pct_Serious": 25.222,
+        "pct_Fatal": 1.979
+      }
+    },
+    "month": {
+      "1.0": {
+        "n": 33888,
+        "pct_Slight": 77.222,
+        "pct_Serious": 21.267,
+        "pct_Fatal": 1.511
+      },
+      "2.0": {
+        "n": 29874,
+        "pct_Slight": 77.094,
+        "pct_Serious": 21.617,
+        "pct_Fatal": 1.289
+      },
+      "3.0": {
+        "n": 34006,
+        "pct_Slight": 76.631,
+        "pct_Serious": 21.937,
+        "pct_Fatal": 1.432
+      },
+      "4.0": {
+        "n": 34079,
+        "pct_Slight": 75.586,
+        "pct_Serious": 22.955,
+        "pct_Fatal": 1.458
+      },
+      "5.0": {
+        "n": 38478,
+        "pct_Slight": 75.55,
+        "pct_Serious": 23.091,
+        "pct_Fatal": 1.359
+      },
+      "6.0": {
+        "n": 39681,
+        "pct_Slight": 75.101,
+        "pct_Serious": 23.523,
+        "pct_Fatal": 1.376
+      },
+      "7.0": {
+        "n": 38455,
+        "pct_Slight": 74.854,
+        "pct_Serious": 23.609,
+        "pct_Fatal": 1.537
+      },
+      "8.0": {
+        "n": 36111,
+        "pct_Slight": 73.778,
+        "pct_Serious": 24.463,
+        "pct_Fatal": 1.758
+      },
+      "9.0": {
+        "n": 38407,
+        "pct_Slight": 75.33,
+        "pct_Serious": 23.241,
+        "pct_Fatal": 1.429
+      },
+      "10.0": {
+        "n": 39018,
+        "pct_Slight": 76.108,
+        "pct_Serious": 22.477,
+        "pct_Fatal": 1.415
+      },
+      "11.0": {
+        "n": 39721,
+        "pct_Slight": 76.539,
+        "pct_Serious": 22.076,
+        "pct_Fatal": 1.385
+      },
+      "12.0": {
+        "n": 35012,
+        "pct_Slight": 76.182,
+        "pct_Serious": 22.124,
+        "pct_Fatal": 1.694
+      }
+    },
+    "is_weekend": {
+      "0.0": {
+        "n": 327702,
+        "pct_Slight": 76.621,
+        "pct_Serious": 22.031,
+        "pct_Fatal": 1.348
+      },
+      "1.0": {
+        "n": 109028,
+        "pct_Slight": 73.311,
+        "pct_Serious": 24.851,
+        "pct_Fatal": 1.837
+      }
+    },
+    "is_rush_hour": {
+      "0.0": {
+        "n": 297674,
+        "pct_Slight": 74.707,
+        "pct_Serious": 23.581,
+        "pct_Fatal": 1.712
+      },
+      "1.0": {
+        "n": 139056,
+        "pct_Slight": 78.125,
+        "pct_Serious": 20.924,
+        "pct_Fatal": 0.951
+      }
+    },
+    "is_night": {
+      "0.0": {
+        "n": 375475,
+        "pct_Slight": 76.588,
+        "pct_Serious": 22.161,
+        "pct_Fatal": 1.251
+      },
+      "1.0": {
+        "n": 61255,
+        "pct_Slight": 70.931,
+        "pct_Serious": 26.256,
+        "pct_Fatal": 2.813
+      }
+    },
+    "multi_vehicle": {
+      "0.0": {
+        "n": 127916,
+        "pct_Slight": 68.1,
+        "pct_Serious": 29.669,
+        "pct_Fatal": 2.231
+      },
+      "1.0": {
+        "n": 308814,
+        "pct_Slight": 78.982,
+        "pct_Serious": 19.863,
+        "pct_Fatal": 1.155
+      }
+    }
+  },
+  "association_with_severity": {
+    "multi_vehicle": {
+      "cramers_v": 0.1167,
+      "chi2_p": 0.0,
+      "levels": 2,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "speed_limit": {
+      "cramers_v": 0.0908,
+      "chi2_p": 0.0,
+      "levels": 6,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "speed_band": {
+      "cramers_v": 0.0898,
+      "chi2_p": 0.0,
+      "levels": 6,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "number_of_vehicles": {
+      "cramers_v": 0.089,
+      "chi2_p": 0.0,
+      "levels": 10,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "urban_or_rural_area": {
+      "cramers_v": 0.0742,
+      "chi2_p": 0.0,
+      "levels": 3,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "trunk_road_flag": {
+      "cramers_v": 0.0645,
+      "chi2_p": 0.0,
+      "levels": 3,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "road_type": {
+      "cramers_v": 0.0622,
+      "chi2_p": 0.0,
+      "levels": 6,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "road_type_group": {
+      "cramers_v": 0.062,
+      "chi2_p": 0.0,
+      "levels": 5,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "light_conditions": {
+      "cramers_v": 0.0602,
+      "chi2_p": 0.0,
+      "levels": 6,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "is_night": {
+      "cramers_v": 0.0583,
+      "chi2_p": 0.0,
+      "levels": 2,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "junction_group": {
+      "cramers_v": 0.0542,
+      "chi2_p": 5.922629565491469e-279,
+      "levels": 2,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "junction_detail": {
+      "cramers_v": 0.0509,
+      "chi2_p": 0.0,
+      "levels": 7,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "lighting_group": {
+      "cramers_v": 0.0499,
+      "chi2_p": 0.0,
+      "levels": 4,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "hour": {
+      "cramers_v": 0.0493,
+      "chi2_p": 0.0,
+      "levels": 24,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "junction_control": {
+      "cramers_v": 0.0469,
+      "chi2_p": 0.0,
+      "levels": 5,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "carriageway_hazards": {
+      "cramers_v": 0.0459,
+      "chi2_p": 0.0,
+      "levels": 14,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "is_rush_hour": {
+      "cramers_v": 0.0432,
+      "chi2_p": 2.0179735397636213e-177,
+      "levels": 2,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "weather_conditions": {
+      "cramers_v": 0.0406,
+      "chi2_p": 2.3549152701143596e-296,
+      "levels": 9,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "weather_group": {
+      "cramers_v": 0.0399,
+      "chi2_p": 2.6814149904970088e-291,
+      "levels": 7,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "road_surface_conditions": {
+      "cramers_v": 0.0385,
+      "chi2_p": 2.6586882525900154e-271,
+      "levels": 6,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "surface_group": {
+      "cramers_v": 0.0383,
+      "chi2_p": 1.058191235171295e-273,
+      "levels": 4,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "is_weekend": {
+      "cramers_v": 0.0351,
+      "chi2_p": 1.7367308834391594e-117,
+      "levels": 2,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "first_road_class": {
+      "cramers_v": 0.0348,
+      "chi2_p": 1.4763062349697606e-218,
+      "levels": 7,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "weekday": {
+      "cramers_v": 0.0257,
+      "chi2_p": 5.471173763111381e-116,
+      "levels": 7,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "special_conditions_at_site": {
+      "cramers_v": 0.025,
+      "chi2_p": 1.4083171898666685e-105,
+      "levels": 9,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "month": {
+      "cramers_v": 0.017,
+      "chi2_p": 6.699718893889386e-41,
+      "levels": 12,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    },
+    "season": {
+      "cramers_v": 0.0135,
+      "chi2_p": 7.802425512039922e-32,
+      "levels": 4,
+      "note": "With very large N p-values are ~0 for tiny effects; read Cramer's V (effect size)."
+    }
+  },
+  "monthly_counts": {
+    "2021-01": {
+      "Slight": 3762,
+      "Serious": 892,
+      "Fatal": 79
+    },
+    "2021-02": {
+      "Slight": 3575,
+      "Serious": 864,
+      "Fatal": 48
+    },
+    "2021-03": {
+      "Slight": 4548,
+      "Serious": 1195,
+      "Fatal": 75
+    },
+    "2021-04": {
+      "Slight": 5612,
+      "Serious": 1479,
+      "Fatal": 88
+    },
+    "2021-05": {
+      "Slight": 6088,
+      "Serious": 1578,
+      "Fatal": 93
+    },
+    "2021-06": {
+      "Slight": 6263,
+      "Serious": 1840,
+      "Fatal": 104
+    },
+    "2021-07": {
+      "Slight": 6274,
+      "Serious": 1820,
+      "Fatal": 140
+    },
+    "2021-08": {
+      "Slight": 5612,
+      "Serious": 1670,
+      "Fatal": 125
+    },
+    "2021-09": {
+      "Slight": 6460,
+      "Serious": 1817,
+      "Fatal": 129
+    },
+    "2021-10": {
+      "Slight": 6387,
+      "Serious": 1718,
+      "Fatal": 138
+    },
+    "2021-11": {
+      "Slight": 6530,
+      "Serious": 1780,
+      "Fatal": 117
+    },
+    "2021-12": {
+      "Slight": 5538,
+      "Serious": 1417,
+      "Fatal": 122
+    },
+    "2022-01": {
+      "Slight": 5971,
+      "Serious": 1617,
+      "Fatal": 128
+    },
+    "2022-02": {
+      "Slight": 5063,
+      "Serious": 1399,
+      "Fatal": 95
+    },
+    "2022-03": {
+      "Slight": 5759,
+      "Serious": 1621,
+      "Fatal": 116
+    },
+    "2022-04": {
+      "Slight": 5082,
+      "Serious": 1512,
+      "Fatal": 111
+    },
+    "2022-05": {
+      "Slight": 5962,
+      "Serious": 1761,
+      "Fatal": 107
+    },
+    "2022-06": {
+      "Slight": 6098,
+      "Serious": 1758,
+      "Fatal": 111
+    },
+    "2022-07": {
+      "Slight": 5830,
+      "Serious": 1842,
+      "Fatal": 132
+    },
+    "2022-08": {
+      "Slight": 5664,
+      "Serious": 1739,
+      "Fatal": 129
+    },
+    "2022-09": {
+      "Slight": 5750,
+      "Serious": 1650,
+      "Fatal": 106
+    },
+    "2022-10": {
+      "Slight": 6097,
+      "Serious": 1763,
+      "Fatal": 111
+    },
+    "2022-11": {
+      "Slight": 6217,
+      "Serious": 1744,
+      "Fatal": 108
+    },
+    "2022-12": {
+      "Slight": 5393,
+      "Serious": 1464,
+      "Fatal": 117
+    },
+    "2023-01": {
+      "Slight": 5774,
+      "Serious": 1551,
+      "Fatal": 103
+    },
+    "2023-02": {
+      "Slight": 4939,
+      "Serious": 1379,
+      "Fatal": 84
+    },
+    "2023-03": {
+      "Slight": 5454,
+      "Serious": 1410,
+      "Fatal": 87
+    },
+    "2023-04": {
+      "Slight": 5063,
+      "Serious": 1465,
+      "Fatal": 90
+    },
+    "2023-05": {
+      "Slight": 5788,
+      "Serious": 1783,
+      "Fatal": 118
+    },
+    "2023-06": {
+      "Slight": 6276,
+      "Serious": 1930,
+      "Fatal": 113
+    },
+    "2023-07": {
+      "Slight": 5846,
+      "Serious": 1831,
+      "Fatal": 109
+    },
+    "2023-08": {
+      "Slight": 5289,
+      "Serious": 1695,
+      "Fatal": 127
+    },
+    "2023-09": {
+      "Slight": 5750,
+      "Serious": 1847,
+      "Fatal": 127
+    },
+    "2023-10": {
+      "Slight": 5916,
+      "Serious": 1727,
+      "Fatal": 100
+    },
+    "2023-11": {
+      "Slight": 5928,
+      "Serious": 1746,
+      "Fatal": 113
+    },
+    "2023-12": {
+      "Slight": 5342,
+      "Serious": 1540,
+      "Fatal": 123
+    },
+    "2024-01": {
+      "Slight": 5367,
+      "Serious": 1578,
+      "Fatal": 113
+    },
+    "2024-02": {
+      "Slight": 4907,
+      "Serious": 1396,
+      "Fatal": 84
+    },
+    "2024-03": {
+      "Slight": 5024,
+      "Serious": 1486,
+      "Fatal": 98
+    },
+    "2024-04": {
+      "Slight": 4846,
+      "Serious": 1552,
+      "Fatal": 102
+    },
+    "2024-05": {
+      "Slight": 5741,
+      "Serious": 1827,
+      "Fatal": 99
+    },
+    "2024-06": {
+      "Slight": 5709,
+      "Serious": 1876,
+      "Fatal": 117
+    },
+    "2024-07": {
+      "Slight": 5388,
+      "Serious": 1737,
+      "Fatal": 104
+    },
+    "2024-08": {
+      "Slight": 5031,
+      "Serious": 1809,
+      "Fatal": 132
+    },
+    "2024-09": {
+      "Slight": 5589,
+      "Serious": 1774,
+      "Fatal": 95
+    },
+    "2024-10": {
+      "Slight": 5870,
+      "Serious": 1749,
+      "Fatal": 92
+    },
+    "2024-11": {
+      "Slight": 5827,
+      "Serious": 1679,
+      "Fatal": 115
+    },
+    "2024-12": {
+      "Slight": 5175,
+      "Serious": 1558,
+      "Fatal": 116
+    },
+    "2025-01": {
+      "Slight": 5295,
+      "Serious": 1569,
+      "Fatal": 89
+    },
+    "2025-02": {
+      "Slight": 4547,
+      "Serious": 1420,
+      "Fatal": 74
+    },
+    "2025-03": {
+      "Slight": 5274,
+      "Serious": 1748,
+      "Fatal": 111
+    },
+    "2025-04": {
+      "Slight": 5156,
+      "Serious": 1815,
+      "Fatal": 106
+    },
+    "2025-05": {
+      "Slight": 5491,
+      "Serious": 1936,
+      "Fatal": 106
+    },
+    "2025-06": {
+      "Slight": 5455,
+      "Serious": 1930,
+      "Fatal": 101
+    },
+    "2025-07": {
+      "Slight": 5447,
+      "Serious": 1849,
+      "Fatal": 106
+    },
+    "2025-08": {
+      "Slight": 5046,
+      "Serious": 1921,
+      "Fatal": 122
+    },
+    "2025-09": {
+      "Slight": 5383,
+      "Serious": 1838,
+      "Fatal": 92
+    },
+    "2025-10": {
+      "Slight": 5426,
+      "Serious": 1813,
+      "Fatal": 111
+    },
+    "2025-11": {
+      "Slight": 5900,
+      "Serious": 1820,
+      "Fatal": 97
+    },
+    "2025-12": {
+      "Slight": 5225,
+      "Serious": 1767,
+      "Fatal": 115
+    }
+  },
+  "yearly_counts": {
+    "2021": {
+      "Slight": 66649,
+      "Serious": 18070,
+      "Fatal": 1258
+    },
+    "2022": {
+      "Slight": 68886,
+      "Serious": 19870,
+      "Fatal": 1371
+    },
+    "2023": {
+      "Slight": 67365,
+      "Serious": 19904,
+      "Fatal": 1294
+    },
+    "2024": {
+      "Slight": 64474,
+      "Serious": 20021,
+      "Fatal": 1267
+    },
+    "2025": {
+      "Slight": 63645,
+      "Serious": 21426,
+      "Fatal": 1230
+    }
+  },
+  "headline_stats": {
+    "pct_night": 14.03,
+    "pct_weekend": 24.96,
+    "pct_rush_hour": 31.84,
+    "pct_multi_vehicle": 70.71,
+    "pct_rural": 32.85
+  }
+}

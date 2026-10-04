@@ -1,0 +1,154 @@
+{
+  "engineered_features": [
+    {
+      "original_feature": "time (STATS19)",
+      "engineered_feature": "hour",
+      "transformation": "extract hour-of-day from recorded time; out-of-range -> missing",
+      "justification": "Hour of day (0-23) from the recorded collision time; risk and traffic mix vary through the day.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "hour",
+      "engineered_feature": "hour_sin",
+      "transformation": "sin(2*pi*hour/24) cyclical encoding",
+      "justification": "Cyclical encoding of hour so 23:00 and 00:00 are neighbours (helps linear models).",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "hour",
+      "engineered_feature": "hour_cos",
+      "transformation": "cos(2*pi*hour/24) cyclical encoding",
+      "justification": "Cosine partner of hour_sin.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "date (STATS19)",
+      "engineered_feature": "month",
+      "transformation": "extract month (1-12) from date",
+      "justification": "Month of year from collision date; captures seasonal effects.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "month",
+      "engineered_feature": "season",
+      "transformation": "meteorological season from month",
+      "justification": "Meteorological season from month (Dec-Feb winter, ...).",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "date / day_of_week (STATS19)",
+      "engineered_feature": "weekday",
+      "transformation": "ISO weekday 0=Mon..6=Sun from date (fallback: STATS19 day_of_week)",
+      "justification": "Day of week (0=Mon..6=Sun) from date (falls back to the STATS19 day_of_week code).",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "weekday",
+      "engineered_feature": "is_weekend",
+      "transformation": "weekday in {5,6}",
+      "justification": "Weekend flag; leisure traffic differs from commuter traffic.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "hour + weekday",
+      "engineered_feature": "is_rush_hour",
+      "transformation": "weekday 07-09 or 16-18",
+      "justification": "Weekday 07-09 or 16-18; congestion lowers speeds but raises collision counts.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "hour",
+      "engineered_feature": "is_night",
+      "transformation": "hour >= 21 or hour < 6",
+      "justification": "Hour >= 21 or < 6; proxy for reduced visibility and fatigue/impairment (approximate, ignores season).",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "speed_limit",
+      "engineered_feature": "speed_band",
+      "transformation": "speed_limit grouped: <=20 / 30 / 40-50 / 60 / 70 / unknown",
+      "justification": "Speed limit grouped (<=20, 30, 40-50, 60, 70, unknown); kinetic energy rises non-linearly with speed.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "number_of_vehicles",
+      "engineered_feature": "multi_vehicle",
+      "transformation": "number_of_vehicles >= 2",
+      "justification": "More than one vehicle involved; single-vehicle crashes have a different severity profile.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "weather_conditions",
+      "engineered_feature": "weather_group",
+      "transformation": "weather codes collapsed (fine/rain/snow/high_wind/fog/other/unknown)",
+      "justification": "Weather codes collapsed to fine / rain / snow / high_wind / fog / other / unknown.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "road_surface_conditions",
+      "engineered_feature": "surface_group",
+      "transformation": "surface codes collapsed (dry/wet/snow_ice/contaminated/unknown)",
+      "justification": "Surface codes collapsed to dry / wet / snow_ice / contaminated / unknown.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "light_conditions",
+      "engineered_feature": "lighting_group",
+      "transformation": "light codes collapsed (daylight/dark_lit/dark_unlit/unknown)",
+      "justification": "Light codes collapsed to daylight / dark_lit / dark_unlit / unknown.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "junction_detail",
+      "engineered_feature": "junction_group",
+      "transformation": "junction detail collapsed (no_junction/roundabout/t_junction/...)",
+      "justification": "Junction detail collapsed to no_junction / roundabout / t_junction / crossroads_multi / slip_road / private_drive / other / unknown.",
+      "available_in_data": true
+    },
+    {
+      "original_feature": "road_type",
+      "engineered_feature": "road_type_group",
+      "transformation": "road type collapsed (roundabout/one_way/dual/single/unknown)",
+      "justification": "Road type collapsed to roundabout / one_way_or_slip / dual_carriageway / single_carriageway / unknown.",
+      "available_in_data": true
+    }
+  ],
+  "model_features_numeric": [
+    "speed_limit",
+    "number_of_vehicles",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "month",
+    "weekday",
+    "is_weekend",
+    "is_rush_hour",
+    "is_night",
+    "multi_vehicle"
+  ],
+  "model_features_categorical": [
+    "road_type",
+    "junction_detail",
+    "junction_control",
+    "light_conditions",
+    "weather_conditions",
+    "road_surface_conditions",
+    "urban_or_rural_area",
+    "first_road_class",
+    "trunk_road_flag",
+    "special_conditions_at_site",
+    "carriageway_hazards",
+    "season",
+    "speed_band",
+    "weather_group",
+    "surface_group",
+    "lighting_group",
+    "junction_group",
+    "road_type_group"
+  ],
+  "model_features_unavailable": {
+    "pedestrian_crossing_human_control": "not present in the loaded data / could not be engineered",
+    "pedestrian_crossing_physical_facilities": "not present in the loaded data / could not be engineered"
+  },
+  "not_features_deliberately": "See reports/leakage_report.json and ml/feature_config.py EXCLUDED_FEATURES (target, casualty outcomes, identifiers, raw geography, ...)."
+}

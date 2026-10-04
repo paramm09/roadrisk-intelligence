@@ -1,0 +1,756 @@
+{
+  "dataset": {
+    "name": "UK DfT STATS19 Road Safety Open Data - collision file(s)",
+    "licence": "Open Government Licence v3.0 (attribution required: Contains public sector information licensed under the OGL v3.0). Confirm on the DfT page for your download date.",
+    "years_requested": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "years_used": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "years_missing": [],
+    "files": [
+      {
+        "year": 2021,
+        "file": "dft-road-casualty-statistics-collision-2021.csv",
+        "size_mb": 19.21,
+        "encoding": "utf-8-sig",
+        "rows_loaded": 101087,
+        "columns_in_file": 44,
+        "columns_loaded": [
+          "accident_severity",
+          "carriageway_hazards",
+          "collision_index",
+          "collision_year",
+          "date",
+          "day_of_week",
+          "first_road_class",
+          "junction_control",
+          "junction_detail",
+          "latitude",
+          "light_conditions",
+          "longitude",
+          "number_of_vehicles",
+          "road_surface_conditions",
+          "road_type",
+          "special_conditions_at_site",
+          "speed_limit",
+          "time",
+          "trunk_road_flag",
+          "urban_or_rural_area",
+          "weather_conditions"
+        ],
+        "wanted_columns_missing": [
+          "pedestrian_crossing_human_control",
+          "pedestrian_crossing_physical_facilities"
+        ],
+        "non_numeric_coerced": {},
+        "hour_out_of_range": 0,
+        "row_limit_applied": null
+      },
+      {
+        "year": 2022,
+        "file": "dft-road-casualty-statistics-collision-2022.csv",
+        "size_mb": 20.12,
+        "encoding": "utf-8-sig",
+        "rows_loaded": 106004,
+        "columns_in_file": 44,
+        "columns_loaded": [
+          "accident_severity",
+          "carriageway_hazards",
+          "collision_index",
+          "collision_year",
+          "date",
+          "day_of_week",
+          "first_road_class",
+          "junction_control",
+          "junction_detail",
+          "latitude",
+          "light_conditions",
+          "longitude",
+          "number_of_vehicles",
+          "road_surface_conditions",
+          "road_type",
+          "special_conditions_at_site",
+          "speed_limit",
+          "time",
+          "trunk_road_flag",
+          "urban_or_rural_area",
+          "weather_conditions"
+        ],
+        "wanted_columns_missing": [
+          "pedestrian_crossing_human_control",
+          "pedestrian_crossing_physical_facilities"
+        ],
+        "non_numeric_coerced": {},
+        "hour_out_of_range": 0,
+        "row_limit_applied": null
+      },
+      {
+        "year": 2023,
+        "file": "dft-road-casualty-statistics-collision-2023.csv",
+        "size_mb": 19.79,
+        "encoding": "utf-8-sig",
+        "rows_loaded": 104258,
+        "columns_in_file": 44,
+        "columns_loaded": [
+          "accident_severity",
+          "carriageway_hazards",
+          "collision_index",
+          "collision_year",
+          "date",
+          "day_of_week",
+          "first_road_class",
+          "junction_control",
+          "junction_detail",
+          "latitude",
+          "light_conditions",
+          "longitude",
+          "number_of_vehicles",
+          "road_surface_conditions",
+          "road_type",
+          "special_conditions_at_site",
+          "speed_limit",
+          "time",
+          "trunk_road_flag",
+          "urban_or_rural_area",
+          "weather_conditions"
+        ],
+        "wanted_columns_missing": [
+          "pedestrian_crossing_human_control",
+          "pedestrian_crossing_physical_facilities"
+        ],
+        "non_numeric_coerced": {},
+        "hour_out_of_range": 0,
+        "row_limit_applied": null
+      },
+      {
+        "year": 2024,
+        "file": "dft-road-casualty-statistics-collision-2024.csv",
+        "size_mb": 19.21,
+        "encoding": "utf-8-sig",
+        "rows_loaded": 100927,
+        "columns_in_file": 44,
+        "columns_loaded": [
+          "accident_severity",
+          "carriageway_hazards",
+          "collision_index",
+          "collision_year",
+          "date",
+          "day_of_week",
+          "first_road_class",
+          "junction_control",
+          "junction_detail",
+          "latitude",
+          "light_conditions",
+          "longitude",
+          "number_of_vehicles",
+          "road_surface_conditions",
+          "road_type",
+          "special_conditions_at_site",
+          "speed_limit",
+          "time",
+          "trunk_road_flag",
+          "urban_or_rural_area",
+          "weather_conditions"
+        ],
+        "wanted_columns_missing": [
+          "pedestrian_crossing_human_control",
+          "pedestrian_crossing_physical_facilities"
+        ],
+        "non_numeric_coerced": {},
+        "hour_out_of_range": 0,
+        "row_limit_applied": null
+      },
+      {
+        "year": 2025,
+        "file": "dft-road-casualty-statistics-collision-2025.csv",
+        "size_mb": 19.35,
+        "encoding": "utf-8-sig",
+        "rows_loaded": 101525,
+        "columns_in_file": 44,
+        "columns_loaded": [
+          "accident_severity",
+          "carriageway_hazards",
+          "collision_index",
+          "collision_year",
+          "date",
+          "day_of_week",
+          "first_road_class",
+          "junction_control",
+          "junction_detail",
+          "latitude",
+          "light_conditions",
+          "longitude",
+          "number_of_vehicles",
+          "road_surface_conditions",
+          "road_type",
+          "special_conditions_at_site",
+          "speed_limit",
+          "time",
+          "trunk_road_flag",
+          "urban_or_rural_area",
+          "weather_conditions"
+        ],
+        "wanted_columns_missing": [
+          "pedestrian_crossing_human_control",
+          "pedestrian_crossing_physical_facilities"
+        ],
+        "non_numeric_coerced": {},
+        "hour_out_of_range": 0,
+        "row_limit_applied": null
+      }
+    ]
+  },
+  "n_rows_loaded": 513801,
+  "n_columns_loaded": 23,
+  "duplicates": {
+    "duplicate_full_rows": 0,
+    "duplicate_collision_index": 0
+  },
+  "columns": [
+    {
+      "column": "collision_index",
+      "dtype": "str",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 513801
+    },
+    {
+      "column": "collision_year",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 5
+    },
+    {
+      "column": "longitude",
+      "dtype": "float32",
+      "n_missing": 53,
+      "pct_missing": 0.01,
+      "n_unique": 437862
+    },
+    {
+      "column": "latitude",
+      "dtype": "float32",
+      "n_missing": 53,
+      "pct_missing": 0.01,
+      "n_unique": 339342
+    },
+    {
+      "column": "accident_severity",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 3
+    },
+    {
+      "column": "number_of_vehicles",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 19
+    },
+    {
+      "column": "date",
+      "dtype": "datetime64[us]",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 1826
+    },
+    {
+      "column": "day_of_week",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 7
+    },
+    {
+      "column": "first_road_class",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 7
+    },
+    {
+      "column": "road_type",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 6
+    },
+    {
+      "column": "speed_limit",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 7
+    },
+    {
+      "column": "junction_detail",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 8
+    },
+    {
+      "column": "junction_control",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 6
+    },
+    {
+      "column": "light_conditions",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 6
+    },
+    {
+      "column": "weather_conditions",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 10
+    },
+    {
+      "column": "road_surface_conditions",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 7
+    },
+    {
+      "column": "special_conditions_at_site",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 10
+    },
+    {
+      "column": "carriageway_hazards",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 14
+    },
+    {
+      "column": "urban_or_rural_area",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 4
+    },
+    {
+      "column": "trunk_road_flag",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 3
+    },
+    {
+      "column": "hour",
+      "dtype": "float32",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 24
+    },
+    {
+      "column": "target",
+      "dtype": "int8",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 3
+    },
+    {
+      "column": "severity",
+      "dtype": "str",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 3
+    }
+  ],
+  "special_code_analysis": {
+    "road_type": {
+      "special_code_counts": {
+        "9": 13060
+      },
+      "observed_codes": {
+        "6": 373065,
+        "3": 76119,
+        "1": 31178,
+        "9": 13060,
+        "2": 11550,
+        "7": 8829
+      },
+      "pct_unknown_or_missing": 2.542
+    },
+    "junction_detail": {
+      "special_code_counts": {
+        "-1": 19982,
+        "99": 1429
+      },
+      "observed_codes": {
+        "0": 252021,
+        "13": 142597,
+        "16": 47572,
+        "19": 31096,
+        "-1": 19982,
+        "18": 11147,
+        "17": 7957,
+        "99": 1429
+      },
+      "pct_unknown_or_missing": 4.167
+    },
+    "junction_control": {
+      "special_code_counts": {
+        "-1": 217897,
+        "9": 11210
+      },
+      "observed_codes": {
+        "4": 222569,
+        "-1": 217897,
+        "2": 56431,
+        "9": 11210,
+        "3": 3484,
+        "1": 2210
+      },
+      "pct_unknown_or_missing": 44.591
+    },
+    "light_conditions": {
+      "special_code_counts": {
+        "-1": 34
+      },
+      "observed_codes": {
+        "1": 368193,
+        "4": 105834,
+        "6": 27438,
+        "7": 8596,
+        "5": 3706,
+        "-1": 34
+      },
+      "pct_unknown_or_missing": 0.007
+    },
+    "weather_conditions": {
+      "special_code_counts": {
+        "9": 14566,
+        "-1": 12
+      },
+      "observed_codes": {
+        "1": 413632,
+        "2": 55834,
+        "8": 15955,
+        "9": 14566,
+        "5": 5173,
+        "4": 4472,
+        "7": 2128,
+        "3": 1791,
+        "6": 238,
+        "-1": 12
+      },
+      "pct_unknown_or_missing": 2.837
+    },
+    "road_surface_conditions": {
+      "special_code_counts": {
+        "9": 6721,
+        "-1": 3527
+      },
+      "observed_codes": {
+        "1": 374268,
+        "2": 120572,
+        "9": 6721,
+        "4": 6668,
+        "-1": 3527,
+        "3": 1257,
+        "5": 788
+      },
+      "pct_unknown_or_missing": 1.995
+    },
+    "urban_or_rural_area": {
+      "special_code_counts": {
+        "3": 50,
+        "-1": 8
+      },
+      "observed_codes": {
+        "1": 345314,
+        "2": 168429,
+        "3": 50,
+        "-1": 8
+      },
+      "pct_unknown_or_missing": 0.011
+    },
+    "first_road_class": {
+      "special_code_counts": {
+        "-1": 6
+      },
+      "observed_codes": {
+        "3": 225830,
+        "6": 184210,
+        "4": 64452,
+        "5": 22612,
+        "1": 15452,
+        "2": 1239,
+        "-1": 6
+      },
+      "pct_unknown_or_missing": 0.001
+    },
+    "trunk_road_flag": {
+      "special_code_counts": {
+        "-1": 36318
+      },
+      "observed_codes": {
+        "2": 444654,
+        "-1": 36318,
+        "1": 32829
+      },
+      "pct_unknown_or_missing": 7.068
+    },
+    "special_conditions_at_site": {
+      "special_code_counts": {
+        "-1": 151370,
+        "9": 10558
+      },
+      "observed_codes": {
+        "0": 343521,
+        "-1": 151370,
+        "9": 10558,
+        "4": 4466,
+        "1": 1081,
+        "5": 841,
+        "7": 782,
+        "3": 580,
+        "6": 418,
+        "2": 184
+      },
+      "pct_unknown_or_missing": 31.516
+    },
+    "carriageway_hazards": {
+      "special_code_counts": {
+        "-1": 9891
+      },
+      "observed_codes": {
+        "0": 473325,
+        "-1": 9891,
+        "99": 9172,
+        "13": 6098,
+        "17": 4790,
+        "11": 1650,
+        "21": 1551,
+        "20": 1486,
+        "15": 1297,
+        "19": 1058,
+        "16": 1037,
+        "12": 938,
+        "18": 893,
+        "14": 615
+      },
+      "pct_unknown_or_missing": 1.925
+    }
+  },
+  "numeric_statistics": {
+    "speed_limit": {
+      "count": 513801.0,
+      "mean": 35.89951705932617,
+      "std": 14.371273040771484,
+      "min": -1.0,
+      "1%": 20.0,
+      "25%": 30.0,
+      "50%": 30.0,
+      "75%": 40.0,
+      "99%": 70.0,
+      "max": 70.0
+    },
+    "number_of_vehicles": {
+      "count": 513801.0,
+      "mean": 1.8241790533065796,
+      "std": 0.6878015398979187,
+      "min": 1.0,
+      "1%": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 2.0,
+      "99%": 4.0,
+      "max": 26.0
+    },
+    "hour": {
+      "count": 513801.0,
+      "mean": 13.744185447692871,
+      "std": 5.150901794433594,
+      "min": 0.0,
+      "1%": 0.0,
+      "25%": 10.0,
+      "50%": 15.0,
+      "75%": 17.0,
+      "99%": 23.0,
+      "max": 23.0
+    }
+  },
+  "outlier_analysis_iqr": {
+    "speed_limit": {
+      "q1": 30.0,
+      "q3": 40.0,
+      "lower_fence": 15.0,
+      "upper_fence": 55.0,
+      "n_outliers": 90964,
+      "pct_outliers": 17.704
+    },
+    "number_of_vehicles": {
+      "q1": 1.0,
+      "q3": 2.0,
+      "lower_fence": -0.5,
+      "upper_fence": 3.5,
+      "n_outliers": 10227,
+      "pct_outliers": 1.99
+    },
+    "hour": {
+      "q1": 10.0,
+      "q3": 17.0,
+      "lower_fence": -0.5,
+      "upper_fence": 27.5,
+      "n_outliers": 0,
+      "pct_outliers": 0.0
+    }
+  },
+  "outlier_handling": "number_of_vehicles capped at 10 (winsorised); speed_limit outside [20, 30, 40, 50, 60, 70] set to missing; not removing rows.",
+  "suspicious_values": {
+    "speed_limit_not_in_{20..70}": 3,
+    "number_of_vehicles_lt_1": 0,
+    "number_of_vehicles_gt_cap": 36,
+    "unparseable_dates": 0,
+    "hour_out_of_range_set_to_missing": 0,
+    "coordinates_missing": 53,
+    "coordinates_outside_uk_box": 0
+  },
+  "target_distribution": {
+    "raw_target_column": "accident_severity",
+    "raw_values_observed": {
+      "3": 389435,
+      "2": 116813,
+      "1": 7553
+    },
+    "mapping_used": {
+      "1": "Fatal",
+      "2": "Serious",
+      "3": "Slight"
+    },
+    "model_class_order": [
+      "Slight",
+      "Serious",
+      "Fatal"
+    ],
+    "n_rows_before": 513801,
+    "n_missing_target": 0,
+    "n_unexpected_codes": 0,
+    "unexpected_codes": {},
+    "n_rows_after": 513801,
+    "class_counts": {
+      "Slight": 389435,
+      "Serious": 116813,
+      "Fatal": 7553
+    },
+    "class_percentages": {
+      "Slight": 75.795,
+      "Serious": 22.735,
+      "Fatal": 1.47
+    },
+    "imbalance_ratio_majority_to_minority": 51.56,
+    "frequency_sanity_check_passed": true,
+    "sanity_check_note": "Expected frequency order Slight > Serious > Fatal."
+  },
+  "candidate_features_raw_columns_present": [
+    "carriageway_hazards",
+    "first_road_class",
+    "hour",
+    "junction_control",
+    "junction_detail",
+    "light_conditions",
+    "number_of_vehicles",
+    "road_surface_conditions",
+    "road_type",
+    "special_conditions_at_site",
+    "speed_limit",
+    "trunk_road_flag",
+    "urban_or_rural_area",
+    "weather_conditions"
+  ],
+  "model_features_planned": [
+    "speed_limit",
+    "number_of_vehicles",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "month",
+    "weekday",
+    "is_weekend",
+    "is_rush_hour",
+    "is_night",
+    "multi_vehicle",
+    "road_type",
+    "junction_detail",
+    "junction_control",
+    "light_conditions",
+    "weather_conditions",
+    "road_surface_conditions",
+    "urban_or_rural_area",
+    "first_road_class",
+    "trunk_road_flag",
+    "special_conditions_at_site",
+    "carriageway_hazards",
+    "pedestrian_crossing_human_control",
+    "pedestrian_crossing_physical_facilities",
+    "season",
+    "speed_band",
+    "weather_group",
+    "surface_group",
+    "lighting_group",
+    "junction_group",
+    "road_type_group"
+  ],
+  "excluded_features": {
+    "accident_severity": "TARGET. Never a feature.",
+    "collision_severity": "TARGET (DfT's name for accident_severity).",
+    "casualty_severity": "LEAKAGE: severity of individual casualties; the collision severity is defined as the worst casualty severity. Casualty file is never loaded.",
+    "casualty_class": "LEAKAGE/POST-EVENT: casualty-file field (describes who was hurt). Casualty file is never loaded.",
+    "casualty_type": "LEAKAGE/POST-EVENT: casualty-file field. Casualty file is never loaded.",
+    "number_of_casualties": "LEAKAGE: only known after the outcome, and mechanically linked to severity (a fatal collision has at least one casualty; more casualties -> more likely severe).",
+    "did_police_officer_attend_scene_of_accident": "POST-EVENT: attendance is a response to the collision and is more likely for severe collisions, so it encodes the outcome.",
+    "collision_index": "IDENTIFIER: no predictive meaning; kept only to de-duplicate and verify the split.",
+    "collision_ref_no": "IDENTIFIER.",
+    "collision_year": "Excluded to avoid memorising year-level drift (reporting changes, COVID-19 2020); kept only for analytics and temporal splitting.",
+    "date": "Raw date replaced by engineered month / weekday / season.",
+    "time": "Raw time replaced by engineered hour and derived flags.",
+    "day_of_week": "Raw STATS19 code (1=Sunday) replaced by engineered weekday / is_weekend.",
+    "latitude": "HIGH-CARDINALITY continuous geography. Not used as a model feature (location memorisation, weak generalisation); rounded copy kept for the historical map and grid aggregation only.",
+    "longitude": "As latitude.",
+    "location_easting_osgr": "As latitude (OSGR coordinates).",
+    "location_northing_osgr": "As latitude (OSGR coordinates).",
+    "police_force": "Administrative area with force-specific reporting practice; would let the model learn reporting differences rather than collision circumstances. (Move to ALLOWED_FEATURES to test it.)",
+    "local_authority_district": "HIGH-CARDINALITY administrative identifier (~380 levels).",
+    "local_authority_ons_district": "HIGH-CARDINALITY administrative identifier.",
+    "local_authority_highway": "HIGH-CARDINALITY administrative identifier.",
+    "lsoa_of_accident_location": "HIGH-CARDINALITY small-area identifier (~35k levels).",
+    "first_road_number": "HIGH-CARDINALITY road identifier.",
+    "second_road_number": "HIGH-CARDINALITY road identifier.",
+    "second_road_class": "Structurally missing away from junctions and largely redundant with junction_detail."
+  },
+  "columns_loaded_but_not_features": [
+    "accident_severity",
+    "collision_index",
+    "collision_year",
+    "date",
+    "day_of_week",
+    "latitude",
+    "longitude",
+    "severity",
+    "target"
+  ]
+}
